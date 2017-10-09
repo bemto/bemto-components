@@ -1,0 +1,26 @@
+{
+  "name": "bemto-components",
+  "version": "0.1.0",
+  "description": "BEM + styled-components = 💖",
+  "main": "lib/index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/kizu/bemto-components.git"
+  },
+  "keywords": [
+    "bem",
+    "styled-components"
+  ],
+  "author": "Roman Komarov",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/kizu/bemto-components/issues"
+  },
+  "homepage": "https://github.com/kizu/bemto-components#readme",
+  "dependencies": {
+    "styled-components": "^2.2.1"
+  }
+}
