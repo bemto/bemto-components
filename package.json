@@ -1,6 +1,6 @@
 {
   "name": "bemto-components",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "BEM + styled-components = 💖",
   "main": "lib/index.js",
   "scripts": {
@@ -21,6 +21,7 @@
   },
   "homepage": "https://github.com/kizu/bemto-components#readme",
   "dependencies": {
+    "react": "15.4.1",
     "styled-components": "^2.2.1"
   }
 }
