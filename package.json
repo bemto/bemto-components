@@ -1,7 +1,7 @@
 {
   "name": "bemto-components",
-  "version": "0.1.1",
-  "description": "BEM + styled-components = 💖",
+  "version": "1.0.0",
+  "description": "Smart components for using parts of BEM methodology with React",
   "main": "lib/index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
@@ -12,16 +12,17 @@
   },
   "keywords": [
     "bem",
+    "bemto",
+    "react",
     "styled-components"
   ],
-  "author": "Roman Komarov",
+  "author": "Roman Komarov <kizu@kizu.ru>",
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/kizu/bemto-components/issues"
   },
   "homepage": "https://github.com/kizu/bemto-components#readme",
   "dependencies": {
-    "react": "15.4.1",
-    "styled-components": "^2.2.1"
+    "react": "15.4.1"
   }
 }
