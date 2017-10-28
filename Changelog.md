@@ -1,5 +1,9 @@
 # `bemto-components` changelog
 
+## v1.1.0 (in development)
+
+- Added a basic classNames/id parser to the tagString argument.
+
 ## v1.0.0 (2017-10-17)
 
 First proper non-prototype version
