@@ -23,10 +23,10 @@
   },
   "homepage": "https://github.com/kizu/bemto-components#readme",
   "dependencies": {
-    "react": "15.4.1"
+    "react": "15.6.2"
   },
   "devDependencies": {
     "jest": "^21.2.1",
-    "react-test-renderer": "^15.4.1"
+    "react-test-renderer": "15.6.2"
   }
 }
