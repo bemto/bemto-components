@@ -25,13 +25,13 @@ exports[`with multiple external classes 1`] = `
 `;
 
 exports[`with tag and explicit class name 1`] = `
-<div
+<span
   className="block block_mod_value"
 />
 `;
 
 exports[`with tag and explicit id and class name 1`] = `
-<div
+<span
   className="block block_mod_value"
   id="id"
 />
