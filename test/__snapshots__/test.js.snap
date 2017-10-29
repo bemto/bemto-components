@@ -1,0 +1,44 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`with boolean modifier 1`] = `
+<div
+  className="block block_mod"
+/>
+`;
+
+exports[`with class name only 1`] = `
+<div
+  className="block block_mod_value"
+/>
+`;
+
+exports[`with multiple classes 1`] = `
+<div
+  className="block1 block2 block1_mod_value block2_mod_value"
+/>
+`;
+
+exports[`with multiple external classes 1`] = `
+<div
+  className="block1 block2 block1_mod_value block2_mod_value"
+/>
+`;
+
+exports[`with tag and explicit class name 1`] = `
+<div
+  className="block block_mod_value"
+/>
+`;
+
+exports[`with tag and explicit id and class name 1`] = `
+<div
+  className="block block_mod_value"
+  id="id"
+/>
+`;
+
+exports[`with tag name and external className 1`] = `
+<div
+  className="block block_mod_value"
+/>
+`;

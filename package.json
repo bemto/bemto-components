@@ -4,7 +4,7 @@
   "description": "Smart components for using parts of BEM methodology with React",
   "main": "lib/index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "jest"
   },
   "repository": {
     "type": "git",
@@ -24,5 +24,9 @@
   "homepage": "https://github.com/kizu/bemto-components#readme",
   "dependencies": {
     "react": "15.4.1"
+  },
+  "devDependencies": {
+    "jest": "^21.2.1",
+    "react-test-renderer": "^15.4.1"
   }
 }
