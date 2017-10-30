@@ -1,5 +1,15 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
+exports[`with block that has multiple classes and with an element that has a tagString 1`] = `
+<div
+  className="myBlock1 myBlock2 myBlock1_blockMod_value myBlock2_blockMod_value"
+>
+  <span
+    className="extraElemCallClass myBlock1__myElem myBlock2__myElem extraElemClass extraElemCallClass_elemMod_value myBlock1__myElem_elemMod_value myBlock2__myElem_elemMod_value extraElemClass_elemMod_value"
+  />
+</div>
+`;
+
 exports[`with boolean modifier 1`] = `
 <div
   className="block block_mod"
@@ -12,9 +22,40 @@ exports[`with class name only 1`] = `
 />
 `;
 
+exports[`with falsey boolean modifier 1`] = `
+<div
+  className="block"
+/>
+`;
+
+exports[`with id and class name, and local id 1`] = `
+<div
+  className="block block_mod_value"
+  id="newId"
+/>
+`;
+
+exports[`with multiple a class, some attributes and a child block 1`] = `
+<h1
+  className="class1 class1_mod_value"
+  id="Unique"
+  title="hello"
+>
+  <span
+    className="class2"
+  />
+</h1>
+`;
+
 exports[`with multiple classes 1`] = `
 <div
   className="block1 block2 block1_mod_value block2_mod_value"
+/>
+`;
+
+exports[`with multiple classes at different places and multiple modifiers 1`] = `
+<div
+  className="callClass1 callClass2 defClass1 defClass2 callClass1_mod1_value callClass1_mod2 callClass1_mod3_value callClass2_mod1_value callClass2_mod2 callClass2_mod3_value defClass1_mod1_value defClass1_mod2 defClass1_mod3_value defClass2_mod1_value defClass2_mod2 defClass2_mod3_value"
 />
 `;
 
@@ -22,6 +63,23 @@ exports[`with multiple external classes 1`] = `
 <div
   className="block1 block2 block1_mod_value block2_mod_value"
 />
+`;
+
+exports[`with multiple ids in definition 1`] = `
+<span
+  className="block block_mod_value"
+  id="id1"
+/>
+`;
+
+exports[`with simple element 1`] = `
+<div
+  className="myBlock myBlock_blockMod_value"
+>
+  <div
+    className="myBlock__myElem myBlock__myElem_elemMod_value"
+  />
+</div>
 `;
 
 exports[`with tag and explicit class name 1`] = `

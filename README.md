@@ -16,6 +16,8 @@ There are a lot of things `bemto-components` would do in the future, but for now
 
 2. `bemto-components` gives you a way to easily create a component from a simple string that can contain an optional tag name (for now it defaults to `div` if omitted, but more on it coming, see the [3.]) and a bunch of classNames: `bemto('span.myClass1.myClass2')` would create a span component with the `myClass1 myClass2`, which would have all the other bemto features (like the applying of modifiers).
 
+2. `bemto-components` gives you a way to easily create BEM “Elements” for your components.
+
 3. _coming soon_ `bemto-components` would allow you to think less about handling your components' tag names by embracing some prop-based polymorphism. More on it when it would be ready!
 
 
@@ -33,6 +35,38 @@ npm install --save bemto-components
 ## Example usage for modifiers
 
 At definition:
+
+``` jsx
+import bemto from 'bemto-components';
+
+const Block = bemto('div.myBlock');
+```
+
+Usage:
+
+``` jsx
+<Block _mod>
+  Hello
+</Block>
+```
+
+This would output
+
+``` html
+<div class='myBlock myBlock_mod'>Hello</div>
+```
+
+### Modifiers with string values
+
+Both boolean and string values are supported for modifiers:
+
+``` jsx
+<Block _mod1 _mod2='mod2value' />
+```
+
+### With styled-components
+
+Just pass a bemto-component inside styled-components:
 
 ```jsx
 import bemto from 'bemto-components'
@@ -54,10 +88,81 @@ Usage:
 
 Just like this.
 
-More docs to come!
+## Example usage for elements
 
+For bemto-components you can call `.elem()` method to create an element:
 
-## Hint: you can do BEM elements without this lib
+``` jsx
+import bemto from 'bemto-components';
+
+const Block = bemto('.myBlock');
+Block.Element = Block.elem('myElement');
+```
+
+And then use it like this:
+
+``` jsx
+<Block>
+  <Block.Element>Hello</Block.Element>
+</Block>
+```
+
+Which would output
+
+``` html
+<div class='myBlock'><div class='myBlock__myElement'>Hello</div></div>
+```
+
+### TagString for Elements
+
+Like with creation of Blocks, you can use a tagString, passing it as a second param when creating an element:
+
+``` jsx
+import bemto from 'bemto-components';
+
+const Block = bemto('.myBlock');
+Block.Element = Block.elem('myElement', 'span.extraElemClass');
+```
+
+Again,
+
+``` jsx
+<Block>
+  <Block.Element>Hello</Block.Element>
+</Block>
+```
+
+Would output
+
+``` html
+<div class='myBlock'><span class='myBlock__myElement extraElemClass'>Hello</span></div>
+```
+
+### With styled-components
+
+As after wrapping with styled-component you would lose the `elem` method, there is an extra way to create elements:
+
+```jsx
+import bemto from 'bemto-components'
+
+const Block = styled(bemto())`
+  background: red;
+
+  &_mod {
+    background: lime;
+  }
+
+  &__myElement {
+    background: blue;
+  }
+`);
+
+Block.Element = bemto.elem(Block, 'myElement', 'span.extraElemClass');
+```
+
+And there you'd even get the styled-components' names as block names.
+
+## Hint: if you have styled-components, you can emulate elements even without this lib:
 
 It is already possible to _kinda_ use Elements from BEM with react and/or styled components without adding anything extra:
 

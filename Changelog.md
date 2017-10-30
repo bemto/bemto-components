@@ -2,6 +2,7 @@
 
 ## v1.1.0 (in development)
 
+- Added a basic way to create elements of the blocks.
 - Added a basic classNames/id parser to the tagString argument.
 - Fixed a rogue modifier whenever there was a single pregenerated className.
 - Fixed unneeded rendering of props started with underscore as attributes in React 16.
