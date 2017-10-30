@@ -1,5 +1,9 @@
 # `bemto-components` changelog
 
+## v1.1.2 (2017-10-30)
+
+- Some minor docs changes.
+
 ## v1.1.1 (2017-10-30)
 
 - Fixed the call without tagString at all.
