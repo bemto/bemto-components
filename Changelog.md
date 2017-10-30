@@ -1,5 +1,9 @@
 # `bemto-components` changelog
 
+## v1.1.1 (2017-10-30)
+
+- Fixed the call without tagString at all.
+
 ## v1.1.0 (2017-10-30)
 
 - Added a basic way to create elements of the blocks.

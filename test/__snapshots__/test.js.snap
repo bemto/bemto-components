@@ -100,3 +100,9 @@ exports[`with tag name and external className 1`] = `
   className="block block_mod_value"
 />
 `;
+
+exports[`without anything, but with external className 1`] = `
+<div
+  className="block block_mod_value"
+/>
+`;

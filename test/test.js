@@ -21,6 +21,13 @@ test('with tag name and external className', () => {
   );
 });
 
+test('without anything, but with external className', () => {
+  testSnapshot(
+    bemto(),
+    { className: 'block', _mod: 'value' }
+  );
+});
+
 test('with boolean modifier', () => {
   testSnapshot(
     bemto('div'),
