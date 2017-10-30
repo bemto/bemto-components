@@ -1,6 +1,6 @@
 # `bemto-components` changelog
 
-## v1.1.0 (in development)
+## v1.1.0 (2017-10-30)
 
 - Added a basic way to create elements of the blocks.
 - Added a basic classNames/id parser to the tagString argument.
