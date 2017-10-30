@@ -10,6 +10,8 @@ Smart components for using parts of [BEM methodology](https://en.bem.info/method
 
 ## What does it do?
 
+[You can play with everything at this CodePen playground!](https://codepen.io/kizu/pen/BwxNqQ?editors=0010)
+
 There are a lot of things `bemto-components` would do in the future, but for now here are a few main features:
 
 1. `bemto-components` allow you to use BEM-style modifiers for your React components using the _modifier prop syntax. For ecample, if you'd do this (where the Foo is bemto-component): `<Foo _bar />`, each className of the Foo component would be duplicated with an addition of the `_bar` modifier. That allows you to use the BEM modifiers in your CSS (both any external, or using styled-components).
