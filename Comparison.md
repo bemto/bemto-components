@@ -6,13 +6,7 @@ Note that while the HTML and CSS for those examples would be mostly similar, the
 
 ## Styled-components
 
-<table>
-<caption></caption>
-<thead>
-<tr><th>styled-components</th><th>bemto-components</th></tr>
-</thead>
-<tbody>
-
+<table><thead><tr><th>styled-components</th><th>bemto-components</th></tr></thead><tbody>
 <tr><th colspan="2">
 
 ### [Adapting based on props](https://www.styled-components.com/docs/basics#adapting-based-on-props)
@@ -61,7 +55,7 @@ render(
 ### [Extending styles](https://www.styled-components.com/docs/basics#extending-styles)
 
 </th><tr><td colspan="2">
-Note: not exactly the same if you'd want to style all the buttons from outside (possible for bemto, not possible for extend): `${Button}` wouldn't match `TomatoButton`.
+Note: not exactly the same if you'd want to style all the buttons from outside (possible for bemto, not possible for extend): `${Button}` wouldn't match `TomatoButton`. Thus, the bemto variant is closer to the wrapping with an extra `styled`, like `TomatoButton = styled(Button)`.
 </td></tr></tr><tr><td>
 
 ``` jsx

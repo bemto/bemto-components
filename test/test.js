@@ -146,3 +146,67 @@ test('with block that has multiple classes and with an element that has a tagStr
     React.createElement(Block.MyElem, { _elemMod: 'value', className: 'extraElemCallClass' })
   );
 });
+
+test('should become an anchor based on an attrubute', () => {
+  testSnapshot(
+    bemto('.myLink'),
+    { href: '#x' }
+  );
+});
+
+test('should become an anchor based on an attrubute, even when defined as a button', () => {
+  testSnapshot(
+    bemto('button.myLink'),
+    { href: '#x' }
+  );
+});
+
+test('should become a label based on an attrubute', () => {
+  testSnapshot(
+    bemto('.myLabel'),
+    { for: 'myID' }
+  );
+});
+
+test('should become a label based on an attrubute, even when defined as a span', () => {
+  testSnapshot(
+    bemto('span.myLabel'),
+    { for: 'myID' }
+  );
+});
+
+test('should become a button based on an attrubute', () => {
+  testSnapshot(
+    bemto('.myButton'),
+    { type: 'button' }
+  );
+});
+
+test('should NOT become a button as a non-neutral type given', () => {
+  testSnapshot(
+    bemto('input.myButton'),
+    { type: 'button' }
+  );
+});
+
+test('should become a submit button based on an attrubute', () => {
+  testSnapshot(
+    bemto('.mySubmitButton'),
+    { type: 'submit' }
+  );
+});
+
+test('should become a radio button based on an attrubute', () => {
+  testSnapshot(
+    bemto('.myRadio'),
+    { type: 'radio' }
+  );
+});
+
+test('should become an image based on an attrubute', () => {
+  testSnapshot(
+    bemto('.myImage'),
+    { src: 'kitten.jpg' }
+  );
+});
+

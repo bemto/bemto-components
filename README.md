@@ -20,7 +20,7 @@ There are a lot of things `bemto-components` would do in the future, but for now
 
 2. `bemto-components` gives you a way to easily create BEM “Elements” for your components.
 
-3. _coming soon_ `bemto-components` would allow you to think less about handling your components' tag names by embracing some prop-based polymorphism. More on it when it would be ready!
+3. `bemto-components` allows you to think less about handling your components' tag names by embracing some prop-based polymorphism. For example, you can ommit explicit tagnames for some HTML elements: anchors when you'd use `href` attribute, images for components with `src`, labels for components `for`. Buttons for `type` prop with `button` or `submit` values, and inputs for other `type` values. This makes it really easy to make polymorphic menu items (that are spans or divs when no `href` given, and proper links when the `href` is given), or buttons that could be `button`s by default, but would convert themselves to anchors when `href` given.
 
 
 ## Disclaimer
