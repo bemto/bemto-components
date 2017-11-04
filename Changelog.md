@@ -1,8 +1,9 @@
 # `bemto-components` changelog
 
-## v1.2.0 (in development)
+## v1.2.0 (2017-11-04)
 
 - Added basic polymorphic tagnames.
+- Added a chaining way to declare elements.
 
 ## v1.1.2 (2017-10-30)
 

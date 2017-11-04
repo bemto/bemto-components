@@ -18,9 +18,9 @@ There are a lot of things `bemto-components` would do in the future, but for now
 
 2. `bemto-components` gives you a way to easily create a component from a simple string that can contain an optional tag name (for now it defaults to `div` if omitted, but more on it coming, see the [3.]) and a bunch of classNames: `bemto('span.myClass1.myClass2')` would create a span component with the `myClass1 myClass2`, which would have all the other bemto features (like the applying of modifiers).
 
-2. `bemto-components` gives you a way to easily create BEM “Elements” for your components.
+3. `bemto-components` gives you a way to easily create BEM “Elements” for your components.
 
-3. `bemto-components` allows you to think less about handling your components' tag names by embracing some prop-based polymorphism. For example, you can ommit explicit tagnames for some HTML elements: anchors when you'd use `href` attribute, images for components with `src`, labels for components `for`. Buttons for `type` prop with `button` or `submit` values, and inputs for other `type` values. This makes it really easy to make polymorphic menu items (that are spans or divs when no `href` given, and proper links when the `href` is given), or buttons that could be `button`s by default, but would convert themselves to anchors when `href` given.
+4. `bemto-components` allows you to think less about handling your components' tag names by embracing some prop-based polymorphism. For example, you can ommit explicit tagnames for some HTML elements: anchors when you'd use `href` attribute, images for components with `src`, labels for components `for`. Buttons for `type` prop with `button` or `submit` values, and inputs for other `type` values. This makes it really easy to make polymorphic menu items (that are spans or divs when no `href` given, and proper links when the `href` is given), or buttons that could be `button`s by default, but would convert themselves to anchors when `href` given.
 
 
 ## Disclaimer
@@ -114,6 +114,18 @@ Which would output
 ``` html
 <div class='myBlock'><div class='myBlock__myElement'>Hello</div></div>
 ```
+
+### Chaining for creating Elements
+
+You can also use an `addElem()` for creating elements for any given block:
+
+``` jsx
+import bemto from 'bemto-components';
+
+const Block = bemto('.myBlock').addElem('myElement');
+```
+
+would be basically the same as previous example.
 
 ### TagString for Elements
 

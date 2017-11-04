@@ -134,6 +134,30 @@ test('with simple element', () => {
   );
 });
 
+test('with simple element using chaining', () => {
+  const Block = bemto('.myBlock').addElem('MyElem');
+
+  testSnapshot(
+    Block,
+    {
+      _blockMod: 'value'
+    },
+    React.createElement(Block.MyElem, { _elemMod: 'value' })
+  );
+});
+
+test('with two simple nested elements using chaining', () => {
+  const Block = bemto('.myBlock').addElem('MyElem').addElem('MyElem2');
+
+  testSnapshot(
+    Block,
+    {
+      _blockMod: 'value'
+    },
+    React.createElement(Block.MyElem, { _elemMod: 'value' }, React.createElement(Block.MyElem2, { _elem2Mod: 'value' }))
+  );
+});
+
 test('with block that has multiple classes and with an element that has a tagString', () => {
   const Block = bemto('.myBlock1.myBlock2');
   Block.MyElem = Block.elem('myElem', 'span.extraElemClass');

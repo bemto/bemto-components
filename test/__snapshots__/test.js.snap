@@ -145,6 +145,16 @@ exports[`with simple element 1`] = `
 </div>
 `;
 
+exports[`with simple element using chaining 1`] = `
+<div
+  className="myBlock myBlock_blockMod_value"
+>
+  <div
+    className="myBlock__MyElem myBlock__MyElem_elemMod_value"
+  />
+</div>
+`;
+
 exports[`with tag and explicit class name 1`] = `
 <span
   className="block block_mod_value"
@@ -162,6 +172,20 @@ exports[`with tag name and external className 1`] = `
 <div
   className="block block_mod_value"
 />
+`;
+
+exports[`with two simple nested elements using chaining 1`] = `
+<div
+  className="myBlock myBlock_blockMod_value"
+>
+  <div
+    className="myBlock__MyElem myBlock__MyElem_elemMod_value"
+  >
+    <div
+      className="myBlock__MyElem2 myBlock__MyElem2_elem2Mod_value"
+    />
+  </div>
+</div>
 `;
 
 exports[`without anything, but with external className 1`] = `
