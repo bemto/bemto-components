@@ -1,6 +1,6 @@
 # Comparison of the code for different use-cases
 
-Most only the parts which are different were taked from the original examples for brevity.
+Most only the parts which are different were taked from the original examples for brevity, some parts of the original could also sometimes have extra line wraps to fit into the table.
 
 Note that while the HTML and CSS for those examples would be mostly similar, there could be other differences based the nature of each method.
 
@@ -17,8 +17,10 @@ Note: bemto has more code vertically, but more readable and maintainable than on
 
 ``` jsx
 const Button = styled.button`
-  background: ${props => props.primary ? 'palevioletred' : 'white'};
-  color: ${props => props.primary ? 'white' : 'palevioletred'};
+  background: ${props => props.primary
+    ? 'palevioletred' : 'white'};
+  color: ${props => props.primary
+    ? 'white' : 'palevioletred'};
 `;
 render(
   <div>
@@ -91,6 +93,50 @@ render(
   <div>
     <Button>Normal Button</Button>
     <Button _tomato>Tomato Button</Button>
+  </div>
+);
+```
+
+</td></tr><tr><td colspan="2">
+Note: see how we don't need anything extra to change the tag to a link in a bemto-variant, it would even have the same styles for the `_tomato` modifier!
+</td></tr><tr><td>
+
+``` jsx
+const Button = styled.button`
+  color: palevioletred;
+  border: 2px solid palevioletred;
+`;
+const Link = Button.withComponent('a')
+const TomatoLink = Link.extend`
+  color: tomato;
+  border-color: tomato;
+`;
+render(
+  <div>
+    <Button>Normal Button</Button>
+    <Link>Normal Link</Link>
+    <TomatoLink>Tomato Link</TomatoLink>
+  </div>
+);
+```
+
+</td><td>
+
+``` jsx
+const Button = styled(bemto('button'))`
+  color: palevioletred;
+  border: 2px solid palevioletred;
+
+  &_tomato {
+    color: tomato;
+    border-color: tomato;
+  }
+`;
+render(
+  <div>
+    <Button>Normal Button</Button>
+    <Button href="#x">Normal Link</Button>
+    <Button href="#x" _tomato>Tomato Link</Button>
   </div>
 );
 ```
