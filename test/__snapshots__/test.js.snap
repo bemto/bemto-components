@@ -188,9 +188,28 @@ exports[`with tag and explicit id and class name 1`] = `
 />
 `;
 
+exports[`with tag name and external className (options as an object with a parsed tag) 1`] = `
+<span
+  className="block block_mod_value"
+/>
+`;
+
+exports[`with tag name and external className (options as an object) 1`] = `
+<span
+  className="block block_mod_value"
+/>
+`;
+
 exports[`with tag name and external className 1`] = `
 <div
   className="block block_mod_value"
+/>
+`;
+
+exports[`with tagString as well as with options 1`] = `
+<strong
+  className="block optCls tgsClsnm block_mod_value optCls_mod_value tgsClsnm_mod_value"
+  id="optID"
 />
 `;
 
@@ -206,6 +225,12 @@ exports[`with two simple nested elements using chaining 1`] = `
     />
   </div>
 </div>
+`;
+
+exports[`without anything, but with external className  (options as an empty object) 1`] = `
+<div
+  className="block block_mod_value"
+/>
 `;
 
 exports[`without anything, but with external className 1`] = `

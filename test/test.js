@@ -21,9 +21,37 @@ test('with tag name and external className', () => {
   );
 });
 
+test('with tag name and external className (options as an object)', () => {
+  testSnapshot(
+    bemto({ tagString: 'span' }),
+    { className: 'block', _mod: 'value' }
+  );
+});
+
+test('with tag name and external className (options as an object with a parsed tag)', () => {
+  testSnapshot(
+    bemto({ tag: 'span' }),
+    { className: 'block', _mod: 'value' }
+  );
+});
+
+test('with tagString as well as with options', () => {
+  testSnapshot(
+    bemto('span.tgsClsnm#tgsID', { tag: 'strong', className: 'optCls', id: 'optID' }),
+    { className: 'block', _mod: 'value' }
+  );
+});
+
 test('without anything, but with external className', () => {
   testSnapshot(
     bemto(),
+    { className: 'block', _mod: 'value' }
+  );
+});
+
+test('without anything, but with external className  (options as an empty object)', () => {
+  testSnapshot(
+    bemto({}),
     { className: 'block', _mod: 'value' }
   );
 });

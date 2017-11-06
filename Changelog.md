@@ -2,6 +2,7 @@
 
 ## v1.3.0 (in development)
 
+- Added a way to pass options object as well/instead of a tagString.
 - Made __BemtoElem API a bit easier to use.
 
 ## v1.2.0 (2017-11-04)
