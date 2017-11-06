@@ -1,8 +1,10 @@
-# bemto-components <🍱> [WIP] [![Build Status][build]][build-link] [![NPM version][version]][version-link]
+# bemto-components 🍱
 
-[build]: https://travis-ci.org/kizu/bemto-components.png?branch=master
+[![Build Status][build]][build-link] [![NPM package version][version]][version-link]
+
+[build]: https://travis-ci.org/kizu/bemto-components.svg?branch=master
 [build-link]: https://travis-ci.org/kizu/bemto-components
-[version]: https://badge.fury.io/js/bemto-components.png
+[version]: https://img.shields.io/npm/v/bemto-components.svg
 [version-link]: https://www.npmjs.com/package/bemto-components
 
 Smart components for using parts of [BEM methodology](https://en.bem.info/methodology/quick-start/) with [React](https://reactjs.org/). Best used together with [styled-components](https://www.styled-components.com/).
