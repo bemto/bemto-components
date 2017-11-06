@@ -85,6 +85,26 @@ exports[`with class name only 1`] = `
 />
 `;
 
+exports[`with element created through __BemtoElem prop 1`] = `
+<div
+  className="myBlock myBlock_blockMod_value"
+>
+  <div
+    className="myBlock__MyElem"
+  />
+</div>
+`;
+
+exports[`with element created through __BemtoElem prop with more extensive options  1`] = `
+<div
+  className="myBlock myBlock_blockMod_value"
+>
+  <span
+    className="myBlock__MyElem myBlock__MyElem_elemMod_value"
+  />
+</div>
+`;
+
 exports[`with falsey boolean modifier 1`] = `
 <div
   className="block"

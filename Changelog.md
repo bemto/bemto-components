@@ -1,5 +1,9 @@
 # `bemto-components` changelog
 
+## v1.3.0 (in development)
+
+- Made __BemtoElem API a bit easier to use.
+
 ## v1.2.0 (2017-11-04)
 
 - Added basic polymorphic tagnames.

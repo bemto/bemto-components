@@ -234,3 +234,34 @@ test('should become an image based on an attrubute', () => {
   );
 });
 
+test('with element created through __BemtoElem prop', () => {
+  const Block = bemto('.myBlock');
+
+  testSnapshot(
+    Block,
+    {
+      _blockMod: 'value'
+    },
+    React.createElement(Block, { __BemtoElem: {
+      name: 'MyElem'
+    }})
+  );
+});
+
+test('with element created through __BemtoElem prop with more extensive options ', () => {
+  const Block = bemto('.myBlock');
+
+  testSnapshot(
+    Block,
+    {
+      _blockMod: 'value'
+    },
+    React.createElement(Block, { __BemtoElem: {
+      name: 'MyElem',
+      tagString: 'span',
+      props: {
+        _elemMod: 'value'
+      }
+    }})
+  );
+});

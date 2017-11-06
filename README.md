@@ -178,6 +178,60 @@ Block.Element = bemto.elem(Block, 'myElement', 'span.extraElemClass');
 
 And there you'd even get the styled-components' names as block names.
 
+### Inline creation of elements from existing Block
+
+There is a slightly strange-looking API that you can use to create elements without saving them. For doing this you can call your block, but with an addition of a `__BemtoElem` prop, which value should be an object:
+
+```jsx
+<Block>
+  <Block __BemtoElem={{ name: 'Element', tagString: 'span' }}>Hello</Block>
+</Block>
+```
+
+This can be used whenever you want to create a stylable composition of blocks and elements:
+
+```jsx
+const BemtoBlock = bemto();
+
+class BlockStructure extends React.Component {
+  render() {
+    return (
+      <BemtoBlock {...this.props}>
+        <BemtoBlock {...this.props} __BemtoElem={{
+          name: 'Content',
+          tagString: 'span'
+        }}>
+          {this.props.children}
+        </BemtoBlock>
+      </BemtoBlock>
+    )
+  }
+}
+
+const Block = styled(BlockStructure)`
+  background: red;
+
+  &__Content {
+    display: inline-block;
+    padding: 10px;
+  }
+`;
+```
+
+Doing so would allow you to later extend you styled-component and still keep all the element bindings:
+
+const MyBlock = Block.extend`
+  border: 2px solid;
+
+  &__Content {
+    background: lime;
+  }
+`;
+
+This new `MyBlock` would be rendered with all the styles combined and it would have a Content element that would also have all the styles combined.
+
+Note: it could be possible to create a sligtly better API, but that would mean there'd be more logic involved, and this `__BemtoElem` way should be the cheapest and would have the lower amount of wrappers than alternatives.
+
 ## Hint: if you have styled-components, you can emulate elements even without this lib:
 
 It is already possible to _kinda_ use Elements from BEM with react and/or styled components without adding anything extra:
