@@ -1,5 +1,29 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
+exports[`block with a single wrapper inside without an array 1`] = `
+<div
+  className="myBlock"
+>
+  <div
+    className="myBlock__Content"
+  >
+    children text
+  </div>
+</div>
+`;
+
+exports[`block with a single wrapper inside without an array with shorter children syntax 1`] = `
+<div
+  className="myBlock"
+>
+  <div
+    className="myBlock__Content"
+  >
+    children text
+  </div>
+</div>
+`;
+
 exports[`block with passing content to an element through props 1`] = `
 <div
   className="myBlock"
@@ -117,6 +141,19 @@ exports[`simple block with a Helper item before children 1`] = `
   <div
     className="myBlock__Helper"
   />
+  children text
+</div>
+`;
+
+exports[`simple block with a Helper item that have a string content 1`] = `
+<div
+  className="myBlock"
+>
+  <div
+    className="myBlock__Helper"
+  >
+    I am a helper
+  </div>
   children text
 </div>
 `;

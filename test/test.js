@@ -297,7 +297,7 @@ test('with element created through __BemtoElem prop with more extensive options 
 test('simple block with defaulty content', () => {
   testSnapshot(
     bemto('.myBlock', {
-      content: [{ type: 'children' }]
+      content: [{ children: true }]
     }),
     {},
     'children text'
@@ -308,9 +308,8 @@ test('simple block with a Content wrapper', () => {
   testSnapshot(
     bemto('.myBlock', {
       content: [{
-        type: 'elem',
-        name: 'Content',
-        content: [{ type: 'children' }]
+        elem: 'Content',
+        content: [{ children: true }]
       }]
     }),
     {},
@@ -323,11 +322,10 @@ test('simple block with a Helper item before children', () => {
     bemto('.myBlock', {
       content: [
         {
-          type: 'elem',
-          name: 'Helper'
+          elem: 'Helper'
         },
         {
-          type: 'children'
+          children: true
         }
       ]
     }),
@@ -341,18 +339,15 @@ test('simple block with a Before, and a complex After, and a modifier, and an ex
     bemto('.myBlock', {
       content: [
         {
-          type: 'elem',
-          name: 'Before'
+          elem: 'Before'
         },
         {
-          type: 'children'
+          children: true
         },
         {
-          type: 'elem',
-          name: 'After',
+          elem: 'After',
           content: [{
-            type: 'elem',
-            name: 'After__Inner'
+            elem: 'After__Inner'
           }]
         }
       ]
@@ -366,11 +361,10 @@ test('block with passing content to an element through props', () => {
   const MyBlock = bemto('.myBlock', {
     content: [
       {
-        type: 'elem',
-        name: 'Helper'
+        elem: 'Helper'
       },
       {
-        type: 'children'
+        children: true
       }
     ]
   });
@@ -379,6 +373,52 @@ test('block with passing content to an element through props', () => {
     {
       __Helper: 'Hello, helper!'
     },
+    'children text'
+  );
+});
+
+test('block with a single wrapper inside without an array', () => {
+  const MyBlock = bemto('.myBlock', {
+    content: {
+      elem: 'Content',
+      content: { children: true }
+    }
+  });
+  testSnapshot(
+    MyBlock,
+    {},
+    'children text'
+  );
+});
+
+test('block with a single wrapper inside without an array with shorter children syntax', () => {
+  const MyBlock = bemto('.myBlock', {
+    content: {
+      elem: 'Content',
+      children: true
+    }
+  });
+  testSnapshot(
+    MyBlock,
+    {},
+    'children text'
+  );
+});
+
+test('simple block with a Helper item that have a string content', () => {
+  testSnapshot(
+    bemto('.myBlock', {
+      content: [
+        {
+          elem: 'Helper',
+          content: 'I am a helper'
+        },
+        {
+          children: true
+        }
+      ]
+    }),
+    {},
     'children text'
   );
 });
