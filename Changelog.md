@@ -2,6 +2,7 @@
 
 ## v1.3.0 (in development)
 
+- [WIP] Added a way to define the element when defining a bemto block.
 - Added a way to pass options object as well/instead of a tagString.
 - Made __BemtoElem API a bit easier to use.
 

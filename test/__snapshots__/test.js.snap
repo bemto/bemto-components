@@ -1,5 +1,18 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
+exports[`block with passing content to an element through props 1`] = `
+<div
+  className="myBlock"
+>
+  <div
+    className="myBlock__Helper"
+  >
+    Hello, helper!
+  </div>
+  children text
+</div>
+`;
+
 exports[`should NOT become a button as a non-neutral type given 1`] = `
 <input
   className="myButton"
@@ -61,6 +74,59 @@ exports[`should become an image based on an attrubute 1`] = `
   className="myImage"
   src="kitten.jpg"
 />
+`;
+
+exports[`simple block with a Before, and a complex After, and a modifier, and an extraClass 1`] = `
+<div
+  className="extraClass myBlock extraClass_mod myBlock_mod"
+>
+  <div
+    className="extraClass__Before myBlock__Before"
+  />
+  <div
+    className="ChildBlock"
+  >
+    some inner text
+  </div>
+  <div
+    className="extraClass__After myBlock__After"
+  >
+    <div
+      className="extraClass__After__Inner myBlock__After__Inner"
+    />
+  </div>
+</div>
+`;
+
+exports[`simple block with a Content wrapper 1`] = `
+<div
+  className="myBlock"
+>
+  <div
+    className="myBlock__Content"
+  >
+    children text
+  </div>
+</div>
+`;
+
+exports[`simple block with a Helper item before children 1`] = `
+<div
+  className="myBlock"
+>
+  <div
+    className="myBlock__Helper"
+  />
+  children text
+</div>
+`;
+
+exports[`simple block with defaulty content 1`] = `
+<div
+  className="myBlock"
+>
+  children text
+</div>
 `;
 
 exports[`with block that has multiple classes and with an element that has a tagString 1`] = `

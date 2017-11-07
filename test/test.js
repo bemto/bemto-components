@@ -293,3 +293,92 @@ test('with element created through __BemtoElem prop with more extensive options 
     }})
   );
 });
+
+test('simple block with defaulty content', () => {
+  testSnapshot(
+    bemto('.myBlock', {
+      content: [{ type: 'children' }]
+    }),
+    {},
+    'children text'
+  );
+});
+
+test('simple block with a Content wrapper', () => {
+  testSnapshot(
+    bemto('.myBlock', {
+      content: [{
+        type: 'elem',
+        name: 'Content',
+        content: [{ type: 'children' }]
+      }]
+    }),
+    {},
+    'children text'
+  );
+});
+
+test('simple block with a Helper item before children', () => {
+  testSnapshot(
+    bemto('.myBlock', {
+      content: [
+        {
+          type: 'elem',
+          name: 'Helper'
+        },
+        {
+          type: 'children'
+        }
+      ]
+    }),
+    {},
+    'children text'
+  );
+});
+
+test('simple block with a Before, and a complex After, and a modifier, and an extraClass', () => {
+  testSnapshot(
+    bemto('.myBlock', {
+      content: [
+        {
+          type: 'elem',
+          name: 'Before'
+        },
+        {
+          type: 'children'
+        },
+        {
+          type: 'elem',
+          name: 'After',
+          content: [{
+            type: 'elem',
+            name: 'After__Inner'
+          }]
+        }
+      ]
+    }),
+    { className: 'extraClass', _mod: true },
+    React.createElement(bemto('.ChildBlock'), {}, 'some inner text')
+  );
+});
+
+test('block with passing content to an element through props', () => {
+  const MyBlock = bemto('.myBlock', {
+    content: [
+      {
+        type: 'elem',
+        name: 'Helper'
+      },
+      {
+        type: 'children'
+      }
+    ]
+  });
+  testSnapshot(
+    MyBlock,
+    {
+      __Helper: 'Hello, helper!'
+    },
+    'children text'
+  );
+});
