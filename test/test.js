@@ -717,3 +717,91 @@ test('simple block with an optional nested Helper item that should be properly 
     'children text'
   );
 });
+
+test('block with an array as the content of an element', () => {
+  testSnapshot(
+    bemto('.myBlock', {
+      content: [
+        {
+          elem: 'Helper'
+        },
+        {
+          children: true
+        }
+      ]
+    }),
+    { __Helper: ['lol', 'whatever'] },
+    'children text'
+  );
+});
+
+test('block with an array as the content of an element, but as a list', () => {
+  testSnapshot(
+    bemto('.myList', {
+      content: [
+        {
+          elem: 'Item',
+          list: true
+        },
+        {
+          children: true
+        }
+      ]
+    }),
+    { __Item: ['lol', 'whatever'] },
+    'children text'
+  );
+});
+
+test('block with a more complex list system inside', () => {
+  testSnapshot(
+    bemto('.myBlock', {
+      content: [
+        {
+          elem: 'List',
+          tag: 'ul',
+          optional: true,
+          content: {
+            elem: 'Item',
+            tag: 'li',
+            list: true
+          }
+        },
+        {
+          children: true
+        }
+      ]
+    }),
+    { __List: ['lol', 'whatever'] },
+    'children text'
+  );
+});
+
+test('block with a more complex list system inside, now with props O_O', () => {
+  testSnapshot(
+    bemto('.myBlock', {
+      content: [
+        {
+          elem: 'List',
+          tag: 'ul',
+          optional: true,
+          content: {
+            elem: 'Item',
+            tag: 'li',
+            list: true
+          }
+        },
+        {
+          children: true
+        }
+      ]
+    }),
+    {
+      __List: [
+        { content: 'lol', props: { _mod: true } },
+        { content: 'whatever' }
+      ]
+    },
+    'children text'
+  );
+});

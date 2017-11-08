@@ -1,5 +1,49 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
+exports[`block with a more complex list system inside 1`] = `
+<div
+  className="myBlock"
+>
+  <ul
+    className="myBlock__List"
+  >
+    <li
+      className="myBlock__Item"
+    >
+      lol
+    </li>
+    <li
+      className="myBlock__Item"
+    >
+      whatever
+    </li>
+  </ul>
+  children text
+</div>
+`;
+
+exports[`block with a more complex list system inside, now with props O_O 1`] = `
+<div
+  className="myBlock"
+>
+  <ul
+    className="myBlock__List"
+  >
+    <li
+      className="myBlock__Item myBlock__Item_mod"
+    >
+      lol
+    </li>
+    <li
+      className="myBlock__Item"
+    >
+      whatever
+    </li>
+  </ul>
+  children text
+</div>
+`;
+
 exports[`block with a single wrapper inside without an array 1`] = `
 <div
   className="myBlock"
@@ -21,6 +65,38 @@ exports[`block with a single wrapper inside without an array with shorter childr
   >
     children text
   </div>
+</div>
+`;
+
+exports[`block with an array as the content of an element 1`] = `
+<div
+  className="myBlock"
+>
+  <div
+    className="myBlock__Helper"
+  >
+    lol
+    whatever
+  </div>
+  children text
+</div>
+`;
+
+exports[`block with an array as the content of an element, but as a list 1`] = `
+<div
+  className="myList"
+>
+  <div
+    className="myList__Item"
+  >
+    lol
+  </div>
+  <div
+    className="myList__Item"
+  >
+    whatever
+  </div>
+  children text
 </div>
 `;
 
