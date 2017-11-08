@@ -100,6 +100,43 @@ exports[`block with an array as the content of an element, but as a list 1`] = `
 </div>
 `;
 
+exports[`block with passing content to an element through props (passing a list of proper elements) 1`] = `
+<div
+  className="myBlock"
+>
+  <div
+    className="myBlock__Helper"
+  >
+    <span
+      className="helperContent1"
+    />
+  </div>
+  <div
+    className="myBlock__Helper"
+  >
+    <span
+      className="helperContent2"
+    />
+  </div>
+  children text
+</div>
+`;
+
+exports[`block with passing content to an element through props (passing proper element) 1`] = `
+<div
+  className="myBlock"
+>
+  <div
+    className="myBlock__Helper"
+  >
+    <span
+      className="helperContent"
+    />
+  </div>
+  children text
+</div>
+`;
+
 exports[`block with passing content to an element through props 1`] = `
 <div
   className="myBlock"

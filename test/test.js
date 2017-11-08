@@ -437,6 +437,50 @@ test('block with passing content to an element through props', () => {
   );
 });
 
+test('block with passing content to an element through props (passing proper element)', () => {
+  const MyBlock = bemto('.myBlock', {
+    content: [
+      {
+        elem: 'Helper'
+      },
+      {
+        children: true
+      }
+    ]
+  });
+  testSnapshot(
+    MyBlock,
+    {
+      __Helper: React.createElement(bemto('span.helperContent'))
+    },
+    'children text'
+  );
+});
+
+test('block with passing content to an element through props (passing a list of proper elements)', () => {
+  const MyBlock = bemto('.myBlock', {
+    content: [
+      {
+        elem: 'Helper',
+        list: true
+      },
+      {
+        children: true
+      }
+    ]
+  });
+  testSnapshot(
+    MyBlock,
+    {
+      __Helper: [
+        React.createElement(bemto('span.helperContent1')),
+        React.createElement(bemto('span.helperContent2'))
+      ]
+    },
+    'children text'
+  );
+});
+
 test('block with passing content to an element through props using an object', () => {
   const MyBlock = bemto('.myBlock', {
     content: [
