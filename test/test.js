@@ -377,6 +377,23 @@ test('simple block with a Helper item before children', () => {
   );
 });
 
+test('simple block with a Helper item before children using a button tag on parent', () => {
+  testSnapshot(
+    bemto('button.myBlock', {
+      content: [
+        {
+          elem: 'Helper'
+        },
+        {
+          children: true
+        }
+      ]
+    }),
+    {},
+    'children text'
+  );
+});
+
 test('simple block with a Before, and a complex After, and a modifier, and an extraClass', () => {
   testSnapshot(
     bemto('.myBlock', {
