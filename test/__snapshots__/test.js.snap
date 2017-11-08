@@ -179,6 +179,31 @@ exports[`simple block with an optional Helper item that should not be rendered 1
 </div>
 `;
 
+exports[`simple block with an optional nested Helper item that should be properly rendered 1`] = `
+<div
+  className="myBlock"
+>
+  <div
+    className="myBlock__Helper"
+  >
+    <div
+      className="myBlock__Helper__Content"
+    >
+      I am a Helper
+    </div>
+  </div>
+  children text
+</div>
+`;
+
+exports[`simple block with an optional nested Helper item that should not be rendered 1`] = `
+<div
+  className="myBlock"
+>
+  children text
+</div>
+`;
+
 exports[`simple block with defaulty content 1`] = `
 <div
   className="myBlock"

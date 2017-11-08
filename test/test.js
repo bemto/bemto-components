@@ -458,3 +458,45 @@ test('simple block with an optional Helper item that should be rendered as it wa
     'children text'
   );
 });
+
+test('simple block with an optional nested Helper item that should not be rendered', () => {
+  testSnapshot(
+    bemto('.myBlock', {
+      content: [
+        {
+          elem: 'Helper',
+          optional: true,
+          content: {
+            elem: 'Helper__Content'
+          }
+        },
+        {
+          children: true
+        }
+      ]
+    }),
+    {},
+    'children text'
+  );
+});
+
+test('simple block with an optional nested Helper item that should be properly rendered', () => {
+  testSnapshot(
+    bemto('.myBlock', {
+      content: [
+        {
+          elem: 'Helper',
+          optional: true,
+          content: {
+            elem: 'Helper__Content'
+          }
+        },
+        {
+          children: true
+        }
+      ]
+    }),
+    { __Helper: 'I am a Helper' },
+    'children text'
+  );
+});
