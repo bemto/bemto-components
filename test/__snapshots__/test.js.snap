@@ -1,5 +1,182 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
+exports[`block with a more complex list system inside 1`] = `
+<div
+  className="myBlock"
+>
+  <ul
+    className="myBlock__List"
+  >
+    <li
+      className="myBlock__Item"
+    >
+      lol
+    </li>
+    <li
+      className="myBlock__Item"
+    >
+      whatever
+    </li>
+  </ul>
+  children text
+</div>
+`;
+
+exports[`block with a more complex list system inside, now with props O_O 1`] = `
+<div
+  className="myBlock"
+>
+  <ul
+    className="myBlock__List"
+  >
+    <li
+      className="myBlock__Item myBlock__Item_mod"
+    >
+      lol
+    </li>
+    <li
+      className="myBlock__Item"
+    >
+      whatever
+    </li>
+  </ul>
+  children text
+</div>
+`;
+
+exports[`block with a single wrapper inside without an array 1`] = `
+<div
+  className="myBlock"
+>
+  <div
+    className="myBlock__Content"
+  >
+    children text
+  </div>
+</div>
+`;
+
+exports[`block with a single wrapper inside without an array with shorter children syntax 1`] = `
+<div
+  className="myBlock"
+>
+  <div
+    className="myBlock__Content"
+  >
+    children text
+  </div>
+</div>
+`;
+
+exports[`block with an array as the content of an element 1`] = `
+<div
+  className="myBlock"
+>
+  <div
+    className="myBlock__Helper"
+  >
+    lol
+    whatever
+  </div>
+  children text
+</div>
+`;
+
+exports[`block with an array as the content of an element, but as a list 1`] = `
+<div
+  className="myList"
+>
+  <div
+    className="myList__Item"
+  >
+    lol
+  </div>
+  <div
+    className="myList__Item"
+  >
+    whatever
+  </div>
+  children text
+</div>
+`;
+
+exports[`block with passing content to an element through props (passing a list of proper elements) 1`] = `
+<div
+  className="myBlock"
+>
+  <div
+    className="myBlock__Helper"
+  >
+    <span
+      className="helperContent1"
+    />
+  </div>
+  <div
+    className="myBlock__Helper"
+  >
+    <span
+      className="helperContent2"
+    />
+  </div>
+  children text
+</div>
+`;
+
+exports[`block with passing content to an element through props (passing proper element) 1`] = `
+<div
+  className="myBlock"
+>
+  <div
+    className="myBlock__Helper"
+  >
+    <span
+      className="helperContent"
+    />
+  </div>
+  children text
+</div>
+`;
+
+exports[`block with passing content to an element through props 1`] = `
+<div
+  className="myBlock"
+>
+  <div
+    className="myBlock__Helper"
+  >
+    Hello, helper!
+  </div>
+  children text
+</div>
+`;
+
+exports[`block with passing content to an element through props using an object 1`] = `
+<div
+  className="myBlock"
+>
+  <div
+    className="myBlock__Helper"
+  >
+    Hello, helper!
+  </div>
+  children text
+</div>
+`;
+
+exports[`block with passing content to an element through props using an object with props 1`] = `
+<div
+  className="myBlock"
+>
+  <a
+    className="myBlock__Helper myBlock__Helper_elemMod"
+    href="#x"
+  >
+    Hello, helper!
+  </a>
+  children text
+</div>
+`;
+
 exports[`should NOT become a button as a non-neutral type given 1`] = `
 <input
   className="myButton"
@@ -61,6 +238,240 @@ exports[`should become an image based on an attrubute 1`] = `
   className="myImage"
   src="kitten.jpg"
 />
+`;
+
+exports[`simple block with a Before, and a complex After, and a modifier, and an extraClass 1`] = `
+<div
+  className="extraClass myBlock extraClass_mod myBlock_mod"
+>
+  <div
+    className="extraClass__Before myBlock__Before"
+  />
+  <div
+    className="ChildBlock"
+  >
+    some inner text
+  </div>
+  <div
+    className="extraClass__After myBlock__After"
+  >
+    <div
+      className="extraClass__After__Inner myBlock__After__Inner"
+    />
+  </div>
+</div>
+`;
+
+exports[`simple block with a Content wrapper 1`] = `
+<div
+  className="myBlock"
+>
+  <div
+    className="myBlock__Content"
+  >
+    children text
+  </div>
+</div>
+`;
+
+exports[`simple block with a Content wrapper which is a span 1`] = `
+<div
+  className="myBlock"
+>
+  <span
+    className="myBlock__Content"
+  >
+    children text
+  </span>
+</div>
+`;
+
+exports[`simple block with a Content wrapper which is a span and have an extra class 1`] = `
+<div
+  className="myBlock"
+>
+  <span
+    className="myBlock__Content extraContentClassname"
+  >
+    children text
+  </span>
+</div>
+`;
+
+exports[`simple block with a Content wrapper which is a span and have an extra class via tagString 1`] = `
+<div
+  className="myBlock"
+>
+  <div
+    className="myBlock__Content extraContentClassname"
+  >
+    children text
+  </div>
+</div>
+`;
+
+exports[`simple block with a Helper item before children 1`] = `
+<div
+  className="myBlock"
+>
+  <div
+    className="myBlock__Helper"
+  />
+  children text
+</div>
+`;
+
+exports[`simple block with a Helper item before children using a button tag on parent 1`] = `
+<button
+  className="myBlock"
+>
+  <div
+    className="myBlock__Helper"
+  />
+  children text
+</button>
+`;
+
+exports[`simple block with a Helper item that have a string content 1`] = `
+<div
+  className="myBlock"
+>
+  <div
+    className="myBlock__Helper"
+  >
+    I am a helper
+  </div>
+  children text
+</div>
+`;
+
+exports[`simple block with a Helper item that have a string content which is later overrided 1`] = `
+<div
+  className="myBlock"
+>
+  <div
+    className="myBlock__Helper"
+  >
+    Overriding content!
+  </div>
+  children text
+</div>
+`;
+
+exports[`simple block with a nested Helper item that should be rendered with diff modifiers on diff elements 1`] = `
+<div
+  className="myBlock"
+>
+  <div
+    className="myBlock__Helper myBlock__Helper_a1"
+  >
+    <div
+      className="myBlock__Helper2 myBlock__Helper2_a2"
+    >
+      <div
+        className="myBlock__Helper3 myBlock__Helper3_a3"
+      />
+    </div>
+  </div>
+  children text
+</div>
+`;
+
+exports[`simple block with a nested Helper item that should have proper content rendered 1`] = `
+<div
+  className="myBlock"
+>
+  <div
+    className="myBlock__Helper"
+  >
+    <div
+      className="myBlock__Helper2"
+    >
+      <div
+        className="myBlock__Helper3"
+      >
+        rendered
+      </div>
+    </div>
+  </div>
+  children text
+</div>
+`;
+
+exports[`simple block with an optional Helper item that should be rendered as it was passed on call 1`] = `
+<div
+  className="myBlock"
+>
+  <div
+    className="myBlock__Helper"
+  >
+    I am a Helper
+  </div>
+  children text
+</div>
+`;
+
+exports[`simple block with an optional Helper item that should be rendered as it was passed on call but as a boolean 1`] = `
+<div
+  className="myBlock"
+>
+  <div
+    className="myBlock__Helper"
+  />
+  children text
+</div>
+`;
+
+exports[`simple block with an optional Helper item that should be rendered as it was passed on call but as an contentless object with a modifier 1`] = `
+<div
+  className="myBlock"
+>
+  <div
+    className="myBlock__Helper myBlock__Helper_elmo_whee"
+  />
+  children text
+</div>
+`;
+
+exports[`simple block with an optional Helper item that should not be rendered 1`] = `
+<div
+  className="myBlock"
+>
+  children text
+</div>
+`;
+
+exports[`simple block with an optional nested Helper item that should be properly rendered 1`] = `
+<div
+  className="myBlock"
+>
+  <div
+    className="myBlock__Helper"
+  >
+    <div
+      className="myBlock__Helper__Content"
+    >
+      I am a Helper
+    </div>
+  </div>
+  children text
+</div>
+`;
+
+exports[`simple block with an optional nested Helper item that should not be rendered 1`] = `
+<div
+  className="myBlock"
+>
+  children text
+</div>
+`;
+
+exports[`simple block with defaulty content 1`] = `
+<div
+  className="myBlock"
+>
+  children text
+</div>
 `;
 
 exports[`with block that has multiple classes and with an element that has a tagString 1`] = `

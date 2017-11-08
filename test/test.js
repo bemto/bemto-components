@@ -293,3 +293,559 @@ test('with element created through __BemtoElem prop with more extensive options 
     }})
   );
 });
+
+test('simple block with defaulty content', () => {
+  testSnapshot(
+    bemto('.myBlock', {
+      content: [{ children: true }]
+    }),
+    {},
+    'children text'
+  );
+});
+
+test('simple block with a Content wrapper', () => {
+  testSnapshot(
+    bemto('.myBlock', {
+      content: [{
+        elem: 'Content',
+        content: [{ children: true }]
+      }]
+    }),
+    {},
+    'children text'
+  );
+});
+
+test('simple block with a Content wrapper which is a span', () => {
+  testSnapshot(
+    bemto('.myBlock', {
+      content: [{
+        elem: 'Content',
+        tag: 'span',
+        content: [{ children: true }]
+      }]
+    }),
+    {},
+    'children text'
+  );
+});
+
+test('simple block with a Content wrapper which is a span and have an extra class', () => {
+  testSnapshot(
+    bemto('.myBlock', {
+      content: [{
+        elem: 'Content',
+        tag: 'span',
+        className: 'extraContentClassname',
+        content: [{ children: true }]
+      }]
+    }),
+    {},
+    'children text'
+  );
+});
+
+test('simple block with a Content wrapper which is a span and have an extra class via tagString', () => {
+  testSnapshot(
+    bemto('.myBlock', {
+      content: [{
+        elem: 'Content',
+        tagString: 'span.extraContentClassname',
+        content: [{ children: true }]
+      }]
+    }),
+    {},
+    'children text'
+  );
+});
+
+test('simple block with a Helper item before children', () => {
+  testSnapshot(
+    bemto('.myBlock', {
+      content: [
+        {
+          elem: 'Helper'
+        },
+        {
+          children: true
+        }
+      ]
+    }),
+    {},
+    'children text'
+  );
+});
+
+test('simple block with a Helper item before children using a button tag on parent', () => {
+  testSnapshot(
+    bemto('button.myBlock', {
+      content: [
+        {
+          elem: 'Helper'
+        },
+        {
+          children: true
+        }
+      ]
+    }),
+    {},
+    'children text'
+  );
+});
+
+test('simple block with a Before, and a complex After, and a modifier, and an extraClass', () => {
+  testSnapshot(
+    bemto('.myBlock', {
+      content: [
+        {
+          elem: 'Before'
+        },
+        {
+          children: true
+        },
+        {
+          elem: 'After',
+          content: [{
+            elem: 'After__Inner'
+          }]
+        }
+      ]
+    }),
+    { className: 'extraClass', _mod: true },
+    React.createElement(bemto('.ChildBlock'), {}, 'some inner text')
+  );
+});
+
+test('block with passing content to an element through props', () => {
+  const MyBlock = bemto('.myBlock', {
+    content: [
+      {
+        elem: 'Helper'
+      },
+      {
+        children: true
+      }
+    ]
+  });
+  testSnapshot(
+    MyBlock,
+    {
+      __Helper: 'Hello, helper!'
+    },
+    'children text'
+  );
+});
+
+test('block with passing content to an element through props (passing proper element)', () => {
+  const MyBlock = bemto('.myBlock', {
+    content: [
+      {
+        elem: 'Helper'
+      },
+      {
+        children: true
+      }
+    ]
+  });
+  testSnapshot(
+    MyBlock,
+    {
+      __Helper: React.createElement(bemto('span.helperContent'))
+    },
+    'children text'
+  );
+});
+
+test('block with passing content to an element through props (passing a list of proper elements)', () => {
+  const MyBlock = bemto('.myBlock', {
+    content: [
+      {
+        elem: 'Helper',
+        list: true
+      },
+      {
+        children: true
+      }
+    ]
+  });
+  testSnapshot(
+    MyBlock,
+    {
+      __Helper: [
+        React.createElement(bemto('span.helperContent1')),
+        React.createElement(bemto('span.helperContent2'))
+      ]
+    },
+    'children text'
+  );
+});
+
+test('block with passing content to an element through props using an object', () => {
+  const MyBlock = bemto('.myBlock', {
+    content: [
+      {
+        elem: 'Helper'
+      },
+      {
+        children: true
+      }
+    ]
+  });
+  testSnapshot(
+    MyBlock,
+    {
+      __Helper: {
+        content: 'Hello, helper!'
+      }
+    },
+    'children text'
+  );
+});
+
+test('block with passing content to an element through props using an object with props', () => {
+  const MyBlock = bemto('.myBlock', {
+    content: [
+      {
+        elem: 'Helper'
+      },
+      {
+        children: true
+      }
+    ]
+  });
+  testSnapshot(
+    MyBlock,
+    {
+      __Helper: {
+        content: 'Hello, helper!',
+        props: {
+          _elemMod: true,
+          href: '#x'
+        }
+      }
+    },
+    'children text'
+  );
+});
+
+test('block with a single wrapper inside without an array', () => {
+  const MyBlock = bemto('.myBlock', {
+    content: {
+      elem: 'Content',
+      content: { children: true }
+    }
+  });
+  testSnapshot(
+    MyBlock,
+    {},
+    'children text'
+  );
+});
+
+test('block with a single wrapper inside without an array with shorter children syntax', () => {
+  const MyBlock = bemto('.myBlock', {
+    content: {
+      elem: 'Content',
+      children: true
+    }
+  });
+  testSnapshot(
+    MyBlock,
+    {},
+    'children text'
+  );
+});
+
+test('simple block with a Helper item that have a string content', () => {
+  testSnapshot(
+    bemto('.myBlock', {
+      content: [
+        {
+          elem: 'Helper',
+          content: 'I am a helper'
+        },
+        {
+          children: true
+        }
+      ]
+    }),
+    {},
+    'children text'
+  );
+});
+
+test('simple block with a Helper item that have a string content which is later overrided', () => {
+  testSnapshot(
+    bemto('.myBlock', {
+      content: [
+        {
+          elem: 'Helper',
+          content: 'I am a helper'
+        },
+        {
+          children: true
+        }
+      ]
+    }),
+    {
+      __Helper: 'Overriding content!'
+    },
+    'children text'
+  );
+});
+
+test('simple block with an optional Helper item that should not be rendered', () => {
+  testSnapshot(
+    bemto('.myBlock', {
+      content: [
+        {
+          elem: 'Helper',
+          optional: true
+        },
+        {
+          children: true
+        }
+      ]
+    }),
+    {},
+    'children text'
+  );
+});
+
+test('simple block with an optional Helper item that should be rendered as it was passed on call', () => {
+  testSnapshot(
+    bemto('.myBlock', {
+      content: [
+        {
+          elem: 'Helper',
+          optional: true
+        },
+        {
+          children: true
+        }
+      ]
+    }),
+    { __Helper: 'I am a Helper' },
+    'children text'
+  );
+});
+
+test('simple block with an optional Helper item that should be rendered as it was passed on call but as a boolean', () => {
+  testSnapshot(
+    bemto('.myBlock', {
+      content: [
+        {
+          elem: 'Helper',
+          optional: true
+        },
+        {
+          children: true
+        }
+      ]
+    }),
+    { __Helper: true },
+    'children text'
+  );
+});
+
+test('simple block with an optional Helper item that should be rendered as it was passed on call but as an contentless object with a modifier', () => {
+  testSnapshot(
+    bemto('.myBlock', {
+      content: [
+        {
+          elem: 'Helper',
+          optional: true
+        },
+        {
+          children: true
+        }
+      ]
+    }),
+    { __Helper: { props: { _elmo: 'whee'} } },
+    'children text'
+  );
+});
+
+test('simple block with a nested Helper item that should be rendered with diff modifiers on diff elements', () => {
+  testSnapshot(
+    bemto('.myBlock', {
+      content: [
+        {
+          elem: 'Helper',
+          content: {
+            elem: 'Helper2',
+            content: {
+              elem: 'Helper3'
+            }
+          }
+        },
+        {
+          children: true
+        }
+      ]
+    }),
+    {
+      __Helper: { props: { _a1: true} },
+      __Helper2: { props: { _a2: true} },
+      __Helper3: { props: { _a3: true} }
+    },
+    'children text'
+  );
+});
+
+test('simple block with a nested Helper item that should have proper content rendered', () => {
+  testSnapshot(
+    bemto('.myBlock', {
+      content: [
+        {
+          elem: 'Helper',
+          content: {
+            elem: 'Helper2',
+            content: {
+              elem: 'Helper3'
+            }
+          }
+        },
+        {
+          children: true
+        }
+      ]
+    }),
+    {
+      __Helper: "not rendered",
+      __Helper3: "rendered"
+    },
+    'children text'
+  );
+});
+
+test('simple block with an optional nested Helper item that should not be rendered', () => {
+  testSnapshot(
+    bemto('.myBlock', {
+      content: [
+        {
+          elem: 'Helper',
+          optional: true,
+          content: {
+            elem: 'Helper__Content'
+          }
+        },
+        {
+          children: true
+        }
+      ]
+    }),
+    {},
+    'children text'
+  );
+});
+
+test('simple block with an optional nested Helper item that should be properly rendered', () => {
+  testSnapshot(
+    bemto('.myBlock', {
+      content: [
+        {
+          elem: 'Helper',
+          optional: true,
+          content: {
+            elem: 'Helper__Content'
+          }
+        },
+        {
+          children: true
+        }
+      ]
+    }),
+    { __Helper: 'I am a Helper' },
+    'children text'
+  );
+});
+
+test('block with an array as the content of an element', () => {
+  testSnapshot(
+    bemto('.myBlock', {
+      content: [
+        {
+          elem: 'Helper'
+        },
+        {
+          children: true
+        }
+      ]
+    }),
+    { __Helper: ['lol', 'whatever'] },
+    'children text'
+  );
+});
+
+test('block with an array as the content of an element, but as a list', () => {
+  testSnapshot(
+    bemto('.myList', {
+      content: [
+        {
+          elem: 'Item',
+          list: true
+        },
+        {
+          children: true
+        }
+      ]
+    }),
+    { __Item: ['lol', 'whatever'] },
+    'children text'
+  );
+});
+
+test('block with a more complex list system inside', () => {
+  testSnapshot(
+    bemto('.myBlock', {
+      content: [
+        {
+          elem: 'List',
+          tag: 'ul',
+          optional: true,
+          content: {
+            elem: 'Item',
+            tag: 'li',
+            list: true
+          }
+        },
+        {
+          children: true
+        }
+      ]
+    }),
+    { __List: ['lol', 'whatever'] },
+    'children text'
+  );
+});
+
+test('block with a more complex list system inside, now with props O_O', () => {
+  testSnapshot(
+    bemto('.myBlock', {
+      content: [
+        {
+          elem: 'List',
+          tag: 'ul',
+          optional: true,
+          content: {
+            elem: 'Item',
+            tag: 'li',
+            list: true
+          }
+        },
+        {
+          children: true
+        }
+      ]
+    }),
+    {
+      __List: [
+        { content: 'lol', props: { _mod: true } },
+        { content: 'whatever' }
+      ]
+    },
+    'children text'
+  );
+});
