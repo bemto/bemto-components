@@ -570,6 +570,95 @@ test('simple block with an optional Helper item that should be rendered as it wa
   );
 });
 
+test('simple block with an optional Helper item that should be rendered as it was passed on call but as a boolean', () => {
+  testSnapshot(
+    bemto('.myBlock', {
+      content: [
+        {
+          elem: 'Helper',
+          optional: true
+        },
+        {
+          children: true
+        }
+      ]
+    }),
+    { __Helper: true },
+    'children text'
+  );
+});
+
+test('simple block with an optional Helper item that should be rendered as it was passed on call but as an contentless object with a modifier', () => {
+  testSnapshot(
+    bemto('.myBlock', {
+      content: [
+        {
+          elem: 'Helper',
+          optional: true
+        },
+        {
+          children: true
+        }
+      ]
+    }),
+    { __Helper: { props: { _elmo: 'whee'} } },
+    'children text'
+  );
+});
+
+test('simple block with a nested Helper item that should be rendered with diff modifiers on diff elements', () => {
+  testSnapshot(
+    bemto('.myBlock', {
+      content: [
+        {
+          elem: 'Helper',
+          content: {
+            elem: 'Helper2',
+            content: {
+              elem: 'Helper3'
+            }
+          }
+        },
+        {
+          children: true
+        }
+      ]
+    }),
+    {
+      __Helper: { props: { _a1: true} },
+      __Helper2: { props: { _a2: true} },
+      __Helper3: { props: { _a3: true} }
+    },
+    'children text'
+  );
+});
+
+test('simple block with a nested Helper item that should have proper content rendered', () => {
+  testSnapshot(
+    bemto('.myBlock', {
+      content: [
+        {
+          elem: 'Helper',
+          content: {
+            elem: 'Helper2',
+            content: {
+              elem: 'Helper3'
+            }
+          }
+        },
+        {
+          children: true
+        }
+      ]
+    }),
+    {
+      __Helper: "not rendered",
+      __Helper3: "rendered"
+    },
+    'children text'
+  );
+});
+
 test('simple block with an optional nested Helper item that should not be rendered', () => {
   testSnapshot(
     bemto('.myBlock', {

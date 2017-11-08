@@ -234,6 +234,46 @@ exports[`simple block with a Helper item that have a string content which is lat
 </div>
 `;
 
+exports[`simple block with a nested Helper item that should be rendered with diff modifiers on diff elements 1`] = `
+<div
+  className="myBlock"
+>
+  <div
+    className="myBlock__Helper myBlock__Helper_a1"
+  >
+    <div
+      className="myBlock__Helper2 myBlock__Helper2_a2"
+    >
+      <div
+        className="myBlock__Helper3 myBlock__Helper3_a3"
+      />
+    </div>
+  </div>
+  children text
+</div>
+`;
+
+exports[`simple block with a nested Helper item that should have proper content rendered 1`] = `
+<div
+  className="myBlock"
+>
+  <div
+    className="myBlock__Helper"
+  >
+    <div
+      className="myBlock__Helper2"
+    >
+      <div
+        className="myBlock__Helper3"
+      >
+        rendered
+      </div>
+    </div>
+  </div>
+  children text
+</div>
+`;
+
 exports[`simple block with an optional Helper item that should be rendered as it was passed on call 1`] = `
 <div
   className="myBlock"
@@ -243,6 +283,28 @@ exports[`simple block with an optional Helper item that should be rendered as it
   >
     I am a Helper
   </div>
+  children text
+</div>
+`;
+
+exports[`simple block with an optional Helper item that should be rendered as it was passed on call but as a boolean 1`] = `
+<div
+  className="myBlock"
+>
+  <div
+    className="myBlock__Helper"
+  />
+  children text
+</div>
+`;
+
+exports[`simple block with an optional Helper item that should be rendered as it was passed on call but as an contentless object with a modifier 1`] = `
+<div
+  className="myBlock"
+>
+  <div
+    className="myBlock__Helper myBlock__Helper_elmo_whee"
+  />
   children text
 </div>
 `;
