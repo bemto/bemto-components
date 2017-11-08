@@ -423,6 +423,26 @@ test('simple block with a Helper item that have a string content', () => {
   );
 });
 
+test('simple block with a Helper item that have a string content which is later overrided', () => {
+  testSnapshot(
+    bemto('.myBlock', {
+      content: [
+        {
+          elem: 'Helper',
+          content: 'I am a helper'
+        },
+        {
+          children: true
+        }
+      ]
+    }),
+    {
+      __Helper: 'Overriding content!'
+    },
+    'children text'
+  );
+});
+
 test('simple block with an optional Helper item that should not be rendered', () => {
   testSnapshot(
     bemto('.myBlock', {

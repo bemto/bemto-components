@@ -158,6 +158,19 @@ exports[`simple block with a Helper item that have a string content 1`] = `
 </div>
 `;
 
+exports[`simple block with a Helper item that have a string content which is later overrided 1`] = `
+<div
+  className="myBlock"
+>
+  <div
+    className="myBlock__Helper"
+  >
+    Overriding content!
+  </div>
+  children text
+</div>
+`;
+
 exports[`simple block with an optional Helper item that should be rendered as it was passed on call 1`] = `
 <div
   className="myBlock"
