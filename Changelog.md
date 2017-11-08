@@ -1,6 +1,6 @@
 # `bemto-components` changelog
 
-## v1.3.0 (in development)
+## v1.3.0 (2017-11-08)
 
 - Added a way to define the element when defining a bemto block.
 - Added a way to pass content to those elements from the block call.
