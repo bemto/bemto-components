@@ -422,3 +422,39 @@ test('simple block with a Helper item that have a string content', () => {
     'children text'
   );
 });
+
+test('simple block with an optional Helper item that should not be rendered', () => {
+  testSnapshot(
+    bemto('.myBlock', {
+      content: [
+        {
+          elem: 'Helper',
+          optional: true
+        },
+        {
+          children: true
+        }
+      ]
+    }),
+    {},
+    'children text'
+  );
+});
+
+test('simple block with an optional Helper item that should be rendered as it was passed on call', () => {
+  testSnapshot(
+    bemto('.myBlock', {
+      content: [
+        {
+          elem: 'Helper',
+          optional: true
+        },
+        {
+          children: true
+        }
+      ]
+    }),
+    { __Helper: 'I am a Helper' },
+    'children text'
+  );
+});
