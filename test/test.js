@@ -420,6 +420,54 @@ test('block with passing content to an element through props', () => {
   );
 });
 
+test('block with passing content to an element through props using an object', () => {
+  const MyBlock = bemto('.myBlock', {
+    content: [
+      {
+        elem: 'Helper'
+      },
+      {
+        children: true
+      }
+    ]
+  });
+  testSnapshot(
+    MyBlock,
+    {
+      __Helper: {
+        content: 'Hello, helper!'
+      }
+    },
+    'children text'
+  );
+});
+
+test('block with passing content to an element through props using an object with props', () => {
+  const MyBlock = bemto('.myBlock', {
+    content: [
+      {
+        elem: 'Helper'
+      },
+      {
+        children: true
+      }
+    ]
+  });
+  testSnapshot(
+    MyBlock,
+    {
+      __Helper: {
+        content: 'Hello, helper!',
+        props: {
+          _elemMod: true,
+          href: '#x'
+        }
+      }
+    },
+    'children text'
+  );
+});
+
 test('block with a single wrapper inside without an array', () => {
   const MyBlock = bemto('.myBlock', {
     content: {

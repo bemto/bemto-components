@@ -37,6 +37,33 @@ exports[`block with passing content to an element through props 1`] = `
 </div>
 `;
 
+exports[`block with passing content to an element through props using an object 1`] = `
+<div
+  className="myBlock"
+>
+  <div
+    className="myBlock__Helper"
+  >
+    Hello, helper!
+  </div>
+  children text
+</div>
+`;
+
+exports[`block with passing content to an element through props using an object with props 1`] = `
+<div
+  className="myBlock"
+>
+  <a
+    className="myBlock__Helper myBlock__Helper_elemMod"
+    href="#x"
+  >
+    Hello, helper!
+  </a>
+  children text
+</div>
+`;
+
 exports[`should NOT become a button as a non-neutral type given 1`] = `
 <input
   className="myButton"
