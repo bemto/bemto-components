@@ -317,6 +317,49 @@ test('simple block with a Content wrapper', () => {
   );
 });
 
+test('simple block with a Content wrapper which is a span', () => {
+  testSnapshot(
+    bemto('.myBlock', {
+      content: [{
+        elem: 'Content',
+        tag: 'span',
+        content: [{ children: true }]
+      }]
+    }),
+    {},
+    'children text'
+  );
+});
+
+test('simple block with a Content wrapper which is a span and have an extra class', () => {
+  testSnapshot(
+    bemto('.myBlock', {
+      content: [{
+        elem: 'Content',
+        tag: 'span',
+        className: 'extraContentClassname',
+        content: [{ children: true }]
+      }]
+    }),
+    {},
+    'children text'
+  );
+});
+
+test('simple block with a Content wrapper which is a span and have an extra class via tagString', () => {
+  testSnapshot(
+    bemto('.myBlock', {
+      content: [{
+        elem: 'Content',
+        tagString: 'span.extraContentClassname',
+        content: [{ children: true }]
+      }]
+    }),
+    {},
+    'children text'
+  );
+});
+
 test('simple block with a Helper item before children', () => {
   testSnapshot(
     bemto('.myBlock', {

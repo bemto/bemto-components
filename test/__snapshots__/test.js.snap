@@ -134,6 +134,42 @@ exports[`simple block with a Content wrapper 1`] = `
 </div>
 `;
 
+exports[`simple block with a Content wrapper which is a span 1`] = `
+<div
+  className="myBlock"
+>
+  <span
+    className="myBlock__Content"
+  >
+    children text
+  </span>
+</div>
+`;
+
+exports[`simple block with a Content wrapper which is a span and have an extra class 1`] = `
+<div
+  className="myBlock"
+>
+  <span
+    className="myBlock__Content extraContentClassname"
+  >
+    children text
+  </span>
+</div>
+`;
+
+exports[`simple block with a Content wrapper which is a span and have an extra class via tagString 1`] = `
+<div
+  className="myBlock"
+>
+  <span
+    className="myBlock__Content extraContentClassname"
+  >
+    children text
+  </span>
+</div>
+`;
+
 exports[`simple block with a Helper item before children 1`] = `
 <div
   className="myBlock"
