@@ -1,9 +1,10 @@
 ## Changelog
 
-### v1.5.0 (in development)
+### v1.5.0 (2017-11-18)
 
 - Added a way of setting elements' modifiers based on their block's props.
 - Added a way of creating nameless elements on definition.
+- Added proper docs.
 
 ### v1.4.0 (2017-11-16)
 
