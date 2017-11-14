@@ -377,6 +377,292 @@ test('simple block with a Helper item before children', () => {
   );
 });
 
+test('simple block with a Helper item before children with some added props', () => {
+  testSnapshot(
+    bemto('.myBlock', {
+      content: [
+        {
+          elem: 'Helper',
+          props: {
+            title: 'Oh wow',
+            hidden: true
+          }
+        },
+        {
+          children: true
+        }
+      ]
+    }),
+    {},
+    'children text'
+  );
+});
+
+test('with nested bemto block in inline context', () => {
+  testSnapshot(
+    bemto('span.inlineClass1'),
+    {},
+    React.createElement(bemto('.class2'))
+  );
+});
+
+test('with nested bemto block in list context', () => {
+  testSnapshot(
+    bemto('ul.listClass1'),
+    {},
+    React.createElement(bemto('.class2'))
+  );
+});
+
+test('with nested bemto block in select context', () => {
+  testSnapshot(
+    bemto('select.selectClass1'),
+    {},
+    React.createElement(bemto('.class2'))
+  );
+});
+
+test('with multiple nested bemto blocks in inline context', () => {
+  testSnapshot(
+    bemto('span.inlineClass1'),
+    {},
+    React.createElement(bemto('.class2'), {}, React.createElement(bemto('.class3')))
+  );
+});
+
+test('simple block with a Helper item before children with inline context', () => {
+  testSnapshot(
+    bemto('span.myInlineBlock', {
+      content: [
+        {
+          elem: 'Helper'
+        },
+        {
+          children: true
+        }
+      ]
+    }),
+    {},
+    'children text'
+  );
+});
+
+test('simple block with a Helper containing an extra elem at inline context', () => {
+  testSnapshot(
+    bemto('span.myInlineBlock', {
+      content: [
+        {
+          elem: 'Helper',
+          content: React.createElement(bemto('.class2'))
+        },
+        {
+          children: true
+        }
+      ]
+    }),
+    {},
+    'children text'
+  );
+});
+
+test('simple block with a Helper containing an array of extra elems at inline context', () => {
+  testSnapshot(
+    bemto('span.myInlineBlock', {
+      content: [
+        {
+          elem: 'Helper',
+          content: [
+            React.createElement(bemto('.class2'), { key: 'a' }),
+            React.createElement(bemto('.class2'), { key: 'b' })
+          ]
+        },
+        {
+          children: true
+        }
+      ]
+    }),
+    {},
+    'children text'
+  );
+});
+
+test('with a nested Helpers containing an extra elem at inner inline context', () => {
+  testSnapshot(
+    bemto('.myBlock', {
+      content: [
+        {
+          elem: 'InlineHelper',
+          tag: 'span',
+          content: {
+            elem: 'Helper2',
+            content: React.createElement(bemto('.class2'))
+          }
+        },
+        {
+          children: true
+        }
+      ]
+    }),
+    {},
+    'children text'
+  );
+});
+
+test('with a nested Helpers containing an extra elem at inner inline context overridden by label', () => {
+  testSnapshot(
+    bemto('span.myInlineBlock', {
+      content: [
+        {
+          elem: 'LabelHelper',
+          tag: 'label',
+          content: [
+            {
+              elem: 'Helper2'
+            },
+            {
+              elem: 'Helper3',
+              content: React.createElement(bemto('.class2'))
+            }
+          ]
+        },
+        {
+          children: true
+        }
+      ]
+    }),
+    {},
+    'children text'
+  );
+});
+
+test('simple block with a Helper item before children with list context', () => {
+  testSnapshot(
+    bemto('ul.myListBlock', {
+      content: [
+        {
+          elem: 'Helper'
+        },
+        {
+          children: true
+        }
+      ]
+    }),
+    {},
+    'children text'
+  );
+});
+
+test('simple block with a Helper item before children with select context', () => {
+  testSnapshot(
+    bemto('select.mySelectBlock', {
+      content: [
+        {
+          elem: 'Helper'
+        },
+        {
+          children: true
+        }
+      ]
+    }),
+    {},
+    'children text'
+  );
+});
+
+test('simple block with a Helper item before children with nested list context', () => {
+  testSnapshot(
+    bemto('ul.myListBlock', {
+      content: [
+        {
+          elem: 'Helper',
+          content: { elem: 'Helper__Item' }
+        },
+        {
+          children: true
+        }
+      ]
+    }),
+    {},
+    'children text'
+  );
+});
+
+test('simple block with a Helper item before children with list nested in normal item', () => {
+  testSnapshot(
+    bemto('.myBlock', {
+      content: [
+        {
+          elem: 'myListHelper',
+          tag: 'ul',
+          content: { elem: 'myListHelper__Item' }
+        },
+        {
+          children: true
+        }
+      ]
+    }),
+    {},
+    'children text'
+  );
+});
+
+test('block with a complex elements structure', () => {
+  testSnapshot(
+    bemto('.myBlock', {
+      content: [
+        {
+          elem: 'Elem1',
+          tag: 'span',
+          content: [
+            { elem: 'Elem1__Elem1' },
+            {
+              elem: 'Elem1__Elem2',
+              content: [
+                { elem: 'Elem1__Elem2__Elem1' },
+                { elem: 'Elem1__Elem2__Elem2' }
+              ]
+            }
+          ]
+        },
+        {
+          elem: 'Elem2',
+          tag: 'ul',
+          content: [
+            { elem: 'Elem2__Elem1' },
+            {
+              elem: 'Elem2__Elem2',
+              content: [
+                { elem: 'Elem2__Elem2__Elem1' },
+                { elem: 'Elem2__Elem2__Elem2' }
+              ]
+            }
+          ]
+        },
+        {
+          elem: 'Elem3',
+          tag: 'span',
+          content: [
+            { elem: 'Elem3__Elem1', tag: 'label' },
+            {
+              elem: 'Elem3__Elem2',
+              props: { href: '#x' },
+              content: [
+                { elem: 'Elem3__Elem2__Elem1' },
+                { elem: 'Elem3__Elem2__Elem2' }
+              ]
+            }
+          ]
+        },
+        {
+          children: true
+        }
+      ]
+    }),
+    {},
+    'children text'
+  );
+});
+
 test('simple block with a Helper item before children using a button tag on parent', () => {
   testSnapshot(
     bemto('button.myBlock', {
@@ -457,6 +743,8 @@ test('block with passing content to an element through props (passing proper ele
   );
 });
 
+// FIXME: problem with array and keys =_= so this test gives a warning
+/*
 test('block with passing content to an element through props (passing a list of proper elements)', () => {
   const MyBlock = bemto('.myBlock', {
     content: [
@@ -480,6 +768,7 @@ test('block with passing content to an element through props (passing a list of 
     'children text'
   );
 });
+*/
 
 test('block with passing content to an element through props using an object', () => {
   const MyBlock = bemto('.myBlock', {

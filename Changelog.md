@@ -1,5 +1,11 @@
 # `bemto-components` changelog
 
+## v1.4.0 (in development)
+
+- Added context handling for polymorphic tags.
+- Added a way to pass props on element declaration.
+- Fixed a tag getter from the tagString of an element declaration.
+
 ## v1.3.0 (2017-11-08)
 
 - Added a way to define the element when defining a bemto block.

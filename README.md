@@ -24,6 +24,7 @@ There are a lot of things `bemto-components` would do in the future, but for now
 
 4. `bemto-components` allows you to think less about handling your components' tag names by embracing some prop-based polymorphism. For example, you can ommit explicit tagnames for some HTML elements: anchors when you'd use `href` attribute, images for components with `src`, labels for components `for`. Buttons for `type` prop with `button` or `submit` values, and inputs for other `type` values. This makes it really easy to make polymorphic menu items (that are spans or divs when no `href` given, and proper links when the `href` is given), or buttons that could be `button`s by default, but would convert themselves to anchors when `href` given.
 
+5. `bemto-components` allows you to sometimes omit the tag names and get them from the context: if you'd call a bemto block from inside another bemto block which has inline context (like a `span` tag) without explicitly stating a tag (or for some reason trying to have a `div`), it would become a `span`. The same would happen for `ul` and `select`: its items would be by default `li` and `option`.
 
 ## Disclaimer
 

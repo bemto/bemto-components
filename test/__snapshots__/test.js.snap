@@ -1,5 +1,65 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
+exports[`block with a complex elements structure 1`] = `
+<div
+  className="myBlock"
+>
+  <span
+    className="myBlock__Elem1"
+  >
+    <span
+      className="myBlock__Elem1__Elem1"
+    />
+    <span
+      className="myBlock__Elem1__Elem2"
+    >
+      <span
+        className="myBlock__Elem1__Elem2__Elem1"
+      />
+      <span
+        className="myBlock__Elem1__Elem2__Elem2"
+      />
+    </span>
+  </span>
+  <ul
+    className="myBlock__Elem2"
+  >
+    <li
+      className="myBlock__Elem2__Elem1"
+    />
+    <li
+      className="myBlock__Elem2__Elem2"
+    >
+      <div
+        className="myBlock__Elem2__Elem2__Elem1"
+      />
+      <div
+        className="myBlock__Elem2__Elem2__Elem2"
+      />
+    </li>
+  </ul>
+  <span
+    className="myBlock__Elem3"
+  >
+    <label
+      className="myBlock__Elem3__Elem1"
+    />
+    <a
+      className="myBlock__Elem3__Elem2"
+      href="#x"
+    >
+      <span
+        className="myBlock__Elem3__Elem2__Elem1"
+      />
+      <span
+        className="myBlock__Elem3__Elem2__Elem2"
+      />
+    </a>
+  </span>
+  children text
+</div>
+`;
+
 exports[`block with a more complex list system inside 1`] = `
 <div
   className="myBlock"
@@ -95,28 +155,6 @@ exports[`block with an array as the content of an element, but as a list 1`] = `
     className="myList__Item"
   >
     whatever
-  </div>
-  children text
-</div>
-`;
-
-exports[`block with passing content to an element through props (passing a list of proper elements) 1`] = `
-<div
-  className="myBlock"
->
-  <div
-    className="myBlock__Helper"
-  >
-    <span
-      className="helperContent1"
-    />
-  </div>
-  <div
-    className="myBlock__Helper"
-  >
-    <span
-      className="helperContent2"
-    />
   </div>
   children text
 </div>
@@ -302,12 +340,45 @@ exports[`simple block with a Content wrapper which is a span and have an extra c
 <div
   className="myBlock"
 >
-  <div
+  <span
     className="myBlock__Content extraContentClassname"
   >
     children text
-  </div>
+  </span>
 </div>
+`;
+
+exports[`simple block with a Helper containing an array of extra elems at inline context 1`] = `
+<span
+  className="myInlineBlock"
+>
+  <span
+    className="myInlineBlock__Helper"
+  >
+    <span
+      className="class2"
+    />
+    <span
+      className="class2"
+    />
+  </span>
+  children text
+</span>
+`;
+
+exports[`simple block with a Helper containing an extra elem at inline context 1`] = `
+<span
+  className="myInlineBlock"
+>
+  <span
+    className="myInlineBlock__Helper"
+  >
+    <span
+      className="class2"
+    />
+  </span>
+  children text
+</span>
 `;
 
 exports[`simple block with a Helper item before children 1`] = `
@@ -330,6 +401,82 @@ exports[`simple block with a Helper item before children using a button tag on p
   />
   children text
 </button>
+`;
+
+exports[`simple block with a Helper item before children with inline context 1`] = `
+<span
+  className="myInlineBlock"
+>
+  <span
+    className="myInlineBlock__Helper"
+  />
+  children text
+</span>
+`;
+
+exports[`simple block with a Helper item before children with list context 1`] = `
+<ul
+  className="myListBlock"
+>
+  <li
+    className="myListBlock__Helper"
+  />
+  children text
+</ul>
+`;
+
+exports[`simple block with a Helper item before children with list nested in normal item 1`] = `
+<div
+  className="myBlock"
+>
+  <ul
+    className="myBlock__myListHelper"
+  >
+    <li
+      className="myBlock__myListHelper__Item"
+    />
+  </ul>
+  children text
+</div>
+`;
+
+exports[`simple block with a Helper item before children with nested list context 1`] = `
+<ul
+  className="myListBlock"
+>
+  <li
+    className="myListBlock__Helper"
+  >
+    <div
+      className="myListBlock__Helper__Item"
+    />
+  </li>
+  children text
+</ul>
+`;
+
+exports[`simple block with a Helper item before children with select context 1`] = `
+<select
+  className="mySelectBlock"
+>
+  <option
+    className="mySelectBlock__Helper"
+  />
+  children text
+</select>
+`;
+
+exports[`simple block with a Helper item before children with some added props 1`] = `
+<div
+  className="myBlock"
+>
+  <div
+    className="myBlock__Helper"
+    hidden={true}
+    title="Oh wow"
+  />
+  children text
+</div>
 `;
 
 exports[`simple block with a Helper item that have a string content 1`] = `
@@ -474,6 +621,47 @@ exports[`simple block with defaulty content 1`] = `
 </div>
 `;
 
+exports[`with a nested Helpers containing an extra elem at inner inline context 1`] = `
+<div
+  className="myBlock"
+>
+  <span
+    className="myBlock__InlineHelper"
+  >
+    <span
+      className="myBlock__Helper2"
+    >
+      <span
+        className="class2"
+      />
+    </span>
+  </span>
+  children text
+</div>
+`;
+
+exports[`with a nested Helpers containing an extra elem at inner inline context overridden by label 1`] = `
+<span
+  className="myInlineBlock"
+>
+  <label
+    className="myInlineBlock__LabelHelper"
+  >
+    <span
+      className="myInlineBlock__Helper2"
+    />
+    <span
+      className="myInlineBlock__Helper3"
+    >
+      <span
+        className="class2"
+      />
+    </span>
+  </label>
+  children text
+</span>
+`;
+
 exports[`with block that has multiple classes and with an element that has a tagString 1`] = `
 <div
   className="myBlock1 myBlock2 myBlock1_blockMod_value myBlock2_blockMod_value"
@@ -564,6 +752,50 @@ exports[`with multiple ids in definition 1`] = `
   className="block block_mod_value"
   id="id1"
 />
+`;
+
+exports[`with multiple nested bemto blocks in inline context 1`] = `
+<span
+  className="inlineClass1"
+>
+  <span
+    className="class2"
+  >
+    <span
+      className="class3"
+    />
+  </span>
+</span>
+`;
+
+exports[`with nested bemto block in inline context 1`] = `
+<span
+  className="inlineClass1"
+>
+  <span
+    className="class2"
+  />
+</span>
+`;
+
+exports[`with nested bemto block in list context 1`] = `
+<ul
+  className="listClass1"
+>
+  <li
+    className="class2"
+  />
+</ul>
+`;
+
+exports[`with nested bemto block in select context 1`] = `
+<select
+  className="selectClass1"
+>
+  <option
+    className="class2"
+  />
+</select>
 `;
 
 exports[`with simple element 1`] = `
