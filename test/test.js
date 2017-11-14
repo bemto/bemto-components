@@ -77,6 +77,66 @@ test('with class name only', () => {
   );
 });
 
+test('with modifiers passed in the modifiers object', () => {
+  testSnapshot(
+    bemto('.block', {
+      modifiers: {
+        _modWithVal: 'value',
+        _modBool: true,
+        _modNum: 2,
+        _noMod: false
+      }
+    })
+  );
+});
+
+test('with modifiers passed in the modifiers object based on other props', () => {
+  testSnapshot(
+    bemto('.block', {
+      modifiers: {
+        _hasTitle: (props) => !!props.title,
+        _titleText: (props) => props.title,
+        _moreThan9000: (props) => props.power > 9000
+      }
+    }),
+    {
+      title: 'hello',
+      power: 9042
+    }
+  );
+});
+
+test('with modifiers passed in the modifiers object based on other props (absense)', () => {
+  testSnapshot(
+    bemto('.block', {
+      modifiers: {
+        _hasTitle: (props) => !!props.title,
+        _titleText: (props) => props.title,
+        _moreThan9000: (props) => props.power > 9000
+      }
+    })
+  );
+});
+
+test('with modifiers passed in the modifiers object based on other props which are then overriden', () => {
+  testSnapshot(
+    bemto('.block', {
+      modifiers: {
+        _hasTitle: (props) => !!props.title,
+        _titleText: (props) => props.title,
+        _moreThan9000: (props) => props.power > 9000
+      }
+    }),
+    {
+      title: 'hello',
+      power: 9042,
+      _moreThan9000: false,
+      _titleText: 'goodbye',
+      _hasTitle: false
+    }
+  );
+});
+
 test('with tag and explicit class name', () => {
   testSnapshot(
     bemto('span.block'),

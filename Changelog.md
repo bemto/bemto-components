@@ -3,6 +3,7 @@
 ## v1.4.0 (in development)
 
 - Added context handling for polymorphic tags.
+- Added modifiers declaration on block with possible passing of functions.
 - Added a way to pass props on element declaration.
 - Fixed a tag getter from the tagString of an element declaration.
 

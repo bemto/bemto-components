@@ -717,6 +717,34 @@ exports[`with id and class name, and local id 1`] = `
 />
 `;
 
+exports[`with modifiers passed in the modifiers object 1`] = `
+<div
+  className="block block_modWithVal_value block_modBool block_modNum_2"
+/>
+`;
+
+exports[`with modifiers passed in the modifiers object based on other props (absense) 1`] = `
+<div
+  className="block"
+/>
+`;
+
+exports[`with modifiers passed in the modifiers object based on other props 1`] = `
+<div
+  className="block block_hasTitle block_titleText_hello block_moreThan9000"
+  power={9042}
+  title="hello"
+/>
+`;
+
+exports[`with modifiers passed in the modifiers object based on other props which are then overriden 1`] = `
+<div
+  className="block block_titleText_goodbye"
+  power={9042}
+  title="hello"
+/>
+`;
+
 exports[`with multiple a class, some attributes and a child block 1`] = `
 <h1
   className="class1 class1_mod_value"
