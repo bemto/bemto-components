@@ -528,6 +528,25 @@ test('with multiple nested bemto blocks in inline context', () => {
   );
 });
 
+test('with a more complex nested context', () => {
+  const Minimal = bemto();
+  const List = bemto('ol');
+  const Strong = bemto('strong');
+
+  testSnapshot(
+    List,
+    {},
+    React.createElement(Minimal, {}, [
+      'Item',
+      React.createElement(Strong, { key: 'a'}, [
+        React.createElement(Minimal, { key: 'a'}, 'with '),
+        React.createElement(Minimal, { key: 'b'}, 'spans')
+      ]),
+      React.createElement(Minimal, { key: 'b'}, 'And a new line')
+    ])
+  );
+});
+
 test('simple block with a Helper item before children with inline context', () => {
   testSnapshot(
     bemto('span.myInlineBlock', {

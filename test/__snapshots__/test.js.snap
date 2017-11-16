@@ -621,6 +621,25 @@ exports[`simple block with defaulty content 1`] = `
 </div>
 `;
 
+exports[`with a more complex nested context 1`] = `
+<ol>
+  <li>
+    Item
+    <strong>
+      <span>
+        with 
+      </span>
+      <span>
+        spans
+      </span>
+    </strong>
+    <div>
+      And a new line
+    </div>
+  </li>
+</ol>
+`;
+
 exports[`with a nested Helpers containing an extra elem at inner inline context 1`] = `
 <div
   className="myBlock"
