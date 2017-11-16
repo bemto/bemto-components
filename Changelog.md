@@ -1,5 +1,9 @@
 # `bemto-components` changelog
 
+## v1.5.0 (in development)
+
+- Added a way of creating nameless elements on definition.
+
 ## v1.4.0 (2017-11-16)
 
 - Added context handling for polymorphic tags.

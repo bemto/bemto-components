@@ -564,6 +564,95 @@ test('simple block with a Helper item before children with inline context', () =
   );
 });
 
+test('simple block with a classLess Helper item before children', () => {
+  testSnapshot(
+    bemto('.myInlineBlock', {
+      content: [
+        {
+          tag: 'div'
+        },
+        {
+          children: true
+        }
+      ]
+    }),
+    {},
+    'children text'
+  );
+});
+
+test('simple block with a nameless item before children', () => {
+  testSnapshot(
+    bemto('.myBlock', {
+      content: [
+        {
+          className: 'myHelper'
+        },
+        {
+          children: true
+        }
+      ]
+    }),
+    {},
+    'children text'
+  );
+});
+
+test('simple block with a nameless item before children (using props)', () => {
+  testSnapshot(
+    bemto('.myBlock', {
+      content: [
+        {
+          props: {
+            className: 'myHelper'
+          }
+        },
+        {
+          children: true
+        }
+      ]
+    }),
+    {},
+    'children text'
+  );
+});
+
+test('simple block with a nameless item before children just by content', () => {
+  testSnapshot(
+    bemto('.myBlock', {
+      content: [
+        {
+          content: 'hewwo'
+        },
+        {
+          children: true
+        }
+      ]
+    }),
+    {},
+    'children text'
+  );
+});
+
+test('simple block with an item before children just from tagString and complexy structure', () => {
+  testSnapshot(
+    bemto('.myInlineBlock', {
+      content: [
+        {
+          tagString: 'span.foobar',
+          modifiers: { _mod: true },
+          content: 'plaintext'
+        },
+        {
+          children: true
+        }
+      ]
+    }),
+    {},
+    'children text'
+  );
+});
+
 test('simple block with a Helper containing an extra elem at inline context', () => {
   testSnapshot(
     bemto('span.myInlineBlock', {
