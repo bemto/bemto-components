@@ -1,6 +1,6 @@
 # `bemto-components` changelog
 
-## v1.4.0 (in development)
+## v1.4.0 (2017-11-16)
 
 - Added context handling for polymorphic tags.
 - Added modifiers declaration on block with possible passing of functions.
