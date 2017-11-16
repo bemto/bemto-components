@@ -90,6 +90,31 @@ test('with modifiers passed in the modifiers object', () => {
   );
 });
 
+test('with modifiers passed in the modifiers object while having an element', () => {
+  testSnapshot(
+    bemto('.block', {
+      content: [
+        { children: true },
+        {
+          elem: 'Helper',
+          modifiers: {
+            _elemModWithVal: 'value',
+            _elemModBool: true,
+            _elemModNum: 2,
+            _elemNoMod: false
+          }
+        }
+      ],
+      modifiers: {
+        _modWithVal: 'value',
+        _modBool: true,
+        _modNum: 2,
+        _noMod: false
+      }
+    })
+  );
+});
+
 test('with modifiers passed in the modifiers object based on other props', () => {
   testSnapshot(
     bemto('.block', {
@@ -263,6 +288,19 @@ test('should become an anchor based on an attrubute', () => {
   testSnapshot(
     bemto('.myLink'),
     { href: '#x' }
+  );
+});
+
+test('with a wrapped component', () => {
+  const wrappedComponent = bemto('span.wrappedComponent');
+  testSnapshot(
+    bemto(wrappedComponent, {
+      className: 'wrapComponent'
+    }),
+    {
+      className: 'externalClassname',
+      _mod: 'value'
+    }
   );
 });
 

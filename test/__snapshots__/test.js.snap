@@ -280,7 +280,7 @@ exports[`should become an image based on an attrubute 1`] = `
 
 exports[`simple block with a Before, and a complex After, and a modifier, and an extraClass 1`] = `
 <div
-  className="extraClass myBlock extraClass_mod myBlock_mod"
+  className="myBlock extraClass myBlock_mod extraClass_mod"
 >
   <div
     className="extraClass__Before myBlock__Before"
@@ -329,7 +329,7 @@ exports[`simple block with a Content wrapper which is a span and have an extra c
   className="myBlock"
 >
   <span
-    className="myBlock__Content extraContentClassname"
+    className="extraContentClassname myBlock__Content"
   >
     children text
   </span>
@@ -341,7 +341,7 @@ exports[`simple block with a Content wrapper which is a span and have an extra c
   className="myBlock"
 >
   <span
-    className="myBlock__Content extraContentClassname"
+    className="extraContentClassname myBlock__Content"
   >
     children text
   </span>
@@ -662,12 +662,18 @@ exports[`with a nested Helpers containing an extra elem at inner inline context 
 </span>
 `;
 
+exports[`with a wrapped component 1`] = `
+<span
+  className="wrappedComponent wrapComponent externalClassname wrappedComponent_mod_value wrapComponent_mod_value externalClassname_mod_value"
+/>
+`;
+
 exports[`with block that has multiple classes and with an element that has a tagString 1`] = `
 <div
   className="myBlock1 myBlock2 myBlock1_blockMod_value myBlock2_blockMod_value"
 >
   <span
-    className="extraElemCallClass myBlock1__myElem myBlock2__myElem extraElemClass extraElemCallClass_elemMod_value myBlock1__myElem_elemMod_value myBlock2__myElem_elemMod_value extraElemClass_elemMod_value"
+    className="extraElemClass extraElemCallClass myBlock1__myElem myBlock2__myElem extraElemClass_elemMod_value extraElemCallClass_elemMod_value myBlock1__myElem_elemMod_value myBlock2__myElem_elemMod_value"
   />
 </div>
 `;
@@ -745,6 +751,16 @@ exports[`with modifiers passed in the modifiers object based on other props whic
 />
 `;
 
+exports[`with modifiers passed in the modifiers object while having an element 1`] = `
+<div
+  className="block block_modWithVal_value block_modBool block_modNum_2"
+>
+  <div
+    className="block__Helper block__Helper_elemModWithVal_value block__Helper_elemModBool block__Helper_elemModNum_2"
+  />
+</div>
+`;
+
 exports[`with multiple a class, some attributes and a child block 1`] = `
 <h1
   className="class1 class1_mod_value"
@@ -765,7 +781,7 @@ exports[`with multiple classes 1`] = `
 
 exports[`with multiple classes at different places and multiple modifiers 1`] = `
 <div
-  className="callClass1 callClass2 defClass1 defClass2 callClass1_mod1_value callClass1_mod2 callClass1_mod3_value callClass2_mod1_value callClass2_mod2 callClass2_mod3_value defClass1_mod1_value defClass1_mod2 defClass1_mod3_value defClass2_mod1_value defClass2_mod2 defClass2_mod3_value"
+  className="defClass1 defClass2 callClass1 callClass2 defClass1_mod1_value defClass1_mod2 defClass1_mod3_value defClass2_mod1_value defClass2_mod2 defClass2_mod3_value callClass1_mod1_value callClass1_mod2 callClass1_mod3_value callClass2_mod1_value callClass2_mod2 callClass2_mod3_value"
 />
 `;
 
@@ -879,7 +895,7 @@ exports[`with tag name and external className 1`] = `
 
 exports[`with tagString as well as with options 1`] = `
 <strong
-  className="block optCls tgsClsnm block_mod_value optCls_mod_value tgsClsnm_mod_value"
+  className="optCls tgsClsnm block optCls_mod_value tgsClsnm_mod_value block_mod_value"
   id="optID"
 />
 `;
