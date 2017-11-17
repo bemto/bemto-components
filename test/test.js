@@ -131,6 +131,28 @@ test('with modifiers passed in the modifiers object based on other props', () =>
   );
 });
 
+test('with modifiers for helper passed in the modifiers object based on other props', () => {
+  testSnapshot(
+    bemto('.block', {
+      content: [
+        { children: true },
+        {
+          elem: 'Helper',
+          modifiers: {
+            _hasTitle: (props, blockProps) => !!blockProps.title,
+            _titleText: (props, blockProps) => blockProps.title,
+            _moreThan9000: (props, blockProps) => blockProps.power > 9000
+          }
+        }
+      ],
+    }),
+    {
+      title: 'hello',
+      power: 9042
+    }
+  );
+});
+
 test('with modifiers passed in the modifiers object based on other props (absense)', () => {
   testSnapshot(
     bemto('.block', {

@@ -797,6 +797,18 @@ exports[`with id and class name, and local id 1`] = `
 />
 `;
 
+exports[`with modifiers for helper passed in the modifiers object based on other props 1`] = `
+<div
+  className="block"
+  power={9042}
+  title="hello"
+>
+  <div
+    className="block__Helper block__Helper_hasTitle block__Helper_titleText_hello block__Helper_moreThan9000"
+  />
+</div>
+`;
+
 exports[`with modifiers passed in the modifiers object 1`] = `
 <div
   className="block block_modWithVal_value block_modBool block_modNum_2"
