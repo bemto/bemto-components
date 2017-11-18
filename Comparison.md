@@ -15,7 +15,7 @@ Note that while the HTML and CSS for those examples would be mostly similar, the
 Note: bemto has more code vertically, but more readable and maintainable than one based on props.
 </td></tr><tr><td>
 
-``` jsx
+``` jsx static
 const Button = styled.button`
   background: ${props => props.primary
     ? 'palevioletred' : 'white'};
@@ -32,7 +32,7 @@ render(
 
 </td><td>
 
-``` jsx
+``` jsx static
 const Button = styled(bemto('button'))`
   background: white;
   color: palevioletred;
@@ -60,7 +60,7 @@ render(
 Note: not exactly the same if you'd want to style all the buttons from outside (possible for bemto, not possible for extend): `${Button}` wouldn't match `TomatoButton`. Thus, the bemto variant is closer to the wrapping with an extra `styled`, like `TomatoButton = styled(Button)`.
 </td></tr></tr><tr><td>
 
-``` jsx
+``` jsx static
 const Button = styled.button`
   color: palevioletred;
   border: 2px solid palevioletred;
@@ -79,7 +79,7 @@ render(
 
 </td><td>
 
-``` jsx
+``` jsx static
 const Button = styled(bemto('button'))`
   color: palevioletred;
   border: 2px solid palevioletred;
@@ -101,7 +101,7 @@ render(
 Note: see how we don't need anything extra to change the tag to a link in a bemto-variant, it would even have the same styles for the `_tomato` modifier!
 </td></tr><tr><td>
 
-``` jsx
+``` jsx static
 const Button = styled.button`
   color: palevioletred;
   border: 2px solid palevioletred;
@@ -122,7 +122,7 @@ render(
 
 </td><td>
 
-``` jsx
+``` jsx static
 const Button = styled(bemto('button'))`
   color: palevioletred;
   border: 2px solid palevioletred;

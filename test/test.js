@@ -131,6 +131,28 @@ test('with modifiers passed in the modifiers object based on other props', () =>
   );
 });
 
+test('with modifiers for helper passed in the modifiers object based on other props', () => {
+  testSnapshot(
+    bemto('.block', {
+      content: [
+        { children: true },
+        {
+          elem: 'Helper',
+          modifiers: {
+            _hasTitle: (props, blockProps) => !!blockProps.title,
+            _titleText: (props, blockProps) => blockProps.title,
+            _moreThan9000: (props, blockProps) => blockProps.power > 9000
+          }
+        }
+      ],
+    }),
+    {
+      title: 'hello',
+      power: 9042
+    }
+  );
+});
+
 test('with modifiers passed in the modifiers object based on other props (absense)', () => {
   testSnapshot(
     bemto('.block', {
@@ -553,6 +575,95 @@ test('simple block with a Helper item before children with inline context', () =
       content: [
         {
           elem: 'Helper'
+        },
+        {
+          children: true
+        }
+      ]
+    }),
+    {},
+    'children text'
+  );
+});
+
+test('simple block with a classLess Helper item before children', () => {
+  testSnapshot(
+    bemto('.myInlineBlock', {
+      content: [
+        {
+          tag: 'div'
+        },
+        {
+          children: true
+        }
+      ]
+    }),
+    {},
+    'children text'
+  );
+});
+
+test('simple block with a nameless item before children', () => {
+  testSnapshot(
+    bemto('.myBlock', {
+      content: [
+        {
+          className: 'myHelper'
+        },
+        {
+          children: true
+        }
+      ]
+    }),
+    {},
+    'children text'
+  );
+});
+
+test('simple block with a nameless item before children (using props)', () => {
+  testSnapshot(
+    bemto('.myBlock', {
+      content: [
+        {
+          props: {
+            className: 'myHelper'
+          }
+        },
+        {
+          children: true
+        }
+      ]
+    }),
+    {},
+    'children text'
+  );
+});
+
+test('simple block with a nameless item before children just by content', () => {
+  testSnapshot(
+    bemto('.myBlock', {
+      content: [
+        {
+          content: 'hewwo'
+        },
+        {
+          children: true
+        }
+      ]
+    }),
+    {},
+    'children text'
+  );
+});
+
+test('simple block with an item before children just from tagString and complexy structure', () => {
+  testSnapshot(
+    bemto('.myInlineBlock', {
+      content: [
+        {
+          tagString: 'span.foobar',
+          modifiers: { _mod: true },
+          content: 'plaintext'
         },
         {
           children: true

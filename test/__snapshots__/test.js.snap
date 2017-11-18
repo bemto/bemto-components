@@ -505,6 +505,48 @@ exports[`simple block with a Helper item that have a string content which is lat
 </div>
 `;
 
+exports[`simple block with a classLess Helper item before children 1`] = `
+<div
+  className="myInlineBlock"
+>
+  <div />
+  children text
+</div>
+`;
+
+exports[`simple block with a nameless item before children (using props) 1`] = `
+<div
+  className="myBlock"
+>
+  <div
+    className="myHelper"
+  />
+  children text
+</div>
+`;
+
+exports[`simple block with a nameless item before children 1`] = `
+<div
+  className="myBlock"
+>
+  <div
+    className="myHelper"
+  />
+  children text
+</div>
+`;
+
+exports[`simple block with a nameless item before children just by content 1`] = `
+<div
+  className="myBlock"
+>
+  <div>
+    hewwo
+  </div>
+  children text
+</div>
+`;
+
 exports[`simple block with a nested Helper item that should be rendered with diff modifiers on diff elements 1`] = `
 <div
   className="myBlock"
@@ -541,6 +583,19 @@ exports[`simple block with a nested Helper item that should have proper content 
       </div>
     </div>
   </div>
+  children text
+</div>
+`;
+
+exports[`simple block with an item before children just from tagString and complexy structure 1`] = `
+<div
+  className="myInlineBlock"
+>
+  <span
+    className="foobar foobar_mod"
+  >
+    plaintext
+  </span>
   children text
 </div>
 `;
@@ -740,6 +795,18 @@ exports[`with id and class name, and local id 1`] = `
   className="block block_mod_value"
   id="newId"
 />
+`;
+
+exports[`with modifiers for helper passed in the modifiers object based on other props 1`] = `
+<div
+  className="block"
+  power={9042}
+  title="hello"
+>
+  <div
+    className="block__Helper block__Helper_hasTitle block__Helper_titleText_hello block__Helper_moreThan9000"
+  />
+</div>
 `;
 
 exports[`with modifiers passed in the modifiers object 1`] = `

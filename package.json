@@ -1,10 +1,12 @@
 {
   "name": "bemto-components",
-  "version": "1.4.0",
+  "version": "1.5.0",
   "description": "Smart components for using parts of BEM methodology with React",
   "main": "lib/index.js",
   "scripts": {
-    "test": "jest"
+    "test": "jest",
+    "styleguide": "styleguidist server",
+    "styleguide:build": "styleguidist build"
   },
   "repository": {
     "type": "git",
@@ -23,10 +25,15 @@
   },
   "homepage": "https://github.com/kizu/bemto-components#readme",
   "dependencies": {
-    "react": "15.6.2"
+    "react": "16.1.0"
   },
   "devDependencies": {
     "jest": "^21.2.1",
-    "react-test-renderer": "15.6.2"
+    "react-docgen-annotation-resolver": "^1.0.0",
+    "react-dom": "^16.1.0",
+    "react-styleguidist": "^6.0.33",
+    "react-test-renderer": "16.1.0",
+    "styled-components": "^2.2.3",
+    "webpack": "^3.8.1"
   }
 }
