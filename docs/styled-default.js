@@ -38,15 +38,17 @@ if (!global.hasGlobalStyles) {
     }
 
     /* Sticky first code example */
-    h1#introduction + article > div + div > div[data-preview=Introduction] {
-      position: sticky;
-      top: -1px;
-      z-index: 9;
+    @media (min-height: 600px) {
+      h1#introduction + article > div + div > div[data-preview=Introduction] {
+        position: sticky;
+        top: -1px;
+        z-index: 9;
 
-      border: 0;
-      padding: 0;
+        border: 0;
+        padding: 0;
 
-      background: #FFF;
+        background: #FFF;
+      }
     }
 
     /* Better side menu */
@@ -69,6 +71,10 @@ if (!global.hasGlobalStyles) {
     main > section > section:not(:first-child) article > div[class] {
       display: flex;
       flex-direction: row-reverse;
+
+      @media (max-width: 800px) {
+        flex-direction: column-reverse;
+      }
 
       & > div {
         flex-grow: 1;
