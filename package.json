@@ -6,7 +6,8 @@
   "scripts": {
     "test": "jest",
     "styleguide": "styleguidist server",
-    "styleguide:build": "styleguidist build"
+    "styleguide:build": "styleguidist build",
+    "styleguide:deploy": "npm run styleguide:build && (cd styleguide && git add . && git commit -m 'Build up' && git push origin gh-pages)"
   },
   "repository": {
     "type": "git",

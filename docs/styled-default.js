@@ -26,7 +26,7 @@ if (!global.hasGlobalStyles) {
       display: none;
     }
 
-    /* “Code” button, we don't need it as well as buggy isolate! */
+    /* We don't need buggy isolate there */
     a + div[class*=toolbar] > div > a,
     a + div[class*=toolbar] > div > a > svg {
       visibility: hidden;
@@ -34,6 +34,16 @@ if (!global.hasGlobalStyles) {
     }
 
     main > section > section article > div[class] > div:nth-child(2) {
+      position: relative;
+      top: 30px;
+      margin: -50px 0 0;
+    }
+
+    h1#introduction + article > div + div .react-codemirror2 {
+      margin-top: 30px;
+    }
+
+    main > section > section article > div[class] > div:nth-child(2) a {
       display: none;
     }
 
@@ -97,6 +107,10 @@ if (!global.hasGlobalStyles) {
         }
       }
       /* Code pane */
+      & > div:nth-child(2) {
+        display: none;
+      }
+
       & > div:last-child {
         max-height: 50vh;
         overflow: auto;
