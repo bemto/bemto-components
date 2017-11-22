@@ -121,6 +121,17 @@ test('with onclick as predefined function', () => {
   );
 });
 
+test('with modifiers passed as configuration keys', () => {
+  testSnapshot(
+    bemto('.block', {
+      _modWithVal: 'value',
+      _modBool: true,
+      _modNum: 2,
+      _noMod: false
+    })
+  );
+});
+
 test('with modifiers passed in the modifiers object', () => {
   testSnapshot(
     bemto('.block', {
@@ -155,6 +166,27 @@ test('with modifiers passed in the modifiers object while having an element', ()
         _modNum: 2,
         _noMod: false
       }
+    })
+  );
+});
+
+test('with modifiers passed in the modifiers object while having an element (on top level)', () => {
+  testSnapshot(
+    bemto('.block', {
+      content: [
+        { children: true },
+        {
+          elem: 'Helper',
+          _elemModWithVal: 'value',
+          _elemModBool: true,
+          _elemModNum: 2,
+          _elemNoMod: false
+        }
+      ],
+      _modWithVal: 'value',
+      _modBool: true,
+      _modNum: 2,
+      _noMod: false
     })
   );
 });
@@ -548,6 +580,41 @@ test('simple block with a Helper item before children', () => {
   );
 });
 
+test('block with a Helper having a modifier on base level', () => {
+  testSnapshot(
+    bemto('.myBlock', {
+      content: [
+        {
+          elem: 'Helper'
+        },
+        {
+          children: true
+        }
+      ]
+    }),
+    { __Helper: { _elemMod: true } },
+    'children text'
+  );
+});
+
+test('block with a Helper having a modifier on base level, should override prev', () => {
+  testSnapshot(
+    bemto('.myBlock', {
+      content: [
+        {
+          _elemMod: 'old',
+          elem: 'Helper'
+        },
+        {
+          children: true
+        }
+      ]
+    }),
+    { __Helper: { _elemMod: 'new' } },
+    'children text'
+  );
+});
+
 test('block with a textnode Helper before content (tag: false)', () => {
   testSnapshot(
     bemto('.myBlock', {
@@ -566,7 +633,6 @@ test('block with a textnode Helper before content (tag: false)', () => {
     'children text'
   );
 });
-
 
 test('block with a textnode Helper before content (tag: "")', () => {
   testSnapshot(

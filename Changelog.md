@@ -5,6 +5,7 @@
 - Added a way to pass function to props in definition.
 - Added a way to pass function to `optional` prop at elem definition.
 - Added a way to disable an element by calling it as `false` or `null`.
+- Added a simpler way to set modifiers.
 - Added a way to omit tag on element.
 - Added the `reset` as a possible button type.
 - Added docs for the external `bemto-button` component.

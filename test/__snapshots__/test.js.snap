@@ -1,5 +1,27 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
+exports[`block with a Helper having a modifier on base level 1`] = `
+<div
+  className="myBlock"
+>
+  <div
+    className="myBlock__Helper myBlock__Helper_elemMod"
+  />
+  children text
+</div>
+`;
+
+exports[`block with a Helper having a modifier on base level, should override prev 1`] = `
+<div
+  className="myBlock"
+>
+  <div
+    className="myBlock__Helper myBlock__Helper_elemMod_new"
+  />
+  children text
+</div>
+`;
+
 exports[`block with a complex elements structure 1`] = `
 <div
   className="myBlock"
@@ -935,6 +957,12 @@ exports[`with modifiers for helper passed in the modifiers object based on other
 </div>
 `;
 
+exports[`with modifiers passed as configuration keys 1`] = `
+<div
+  className="block block_modWithVal_value block_modBool block_modNum_2"
+/>
+`;
+
 exports[`with modifiers passed in the modifiers object 1`] = `
 <div
   className="block block_modWithVal_value block_modBool block_modNum_2"
@@ -961,6 +989,16 @@ exports[`with modifiers passed in the modifiers object based on other props whic
   power={9042}
   title="hello"
 />
+`;
+
+exports[`with modifiers passed in the modifiers object while having an element (on top level) 1`] = `
+<div
+  className="block block_modWithVal_value block_modBool block_modNum_2"
+>
+  <div
+    className="block__Helper block__Helper_elemModWithVal_value block__Helper_elemModBool block__Helper_elemModNum_2"
+  />
+</div>
 `;
 
 exports[`with modifiers passed in the modifiers object while having an element 1`] = `
