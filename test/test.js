@@ -497,6 +497,31 @@ test('simple block with a Helper item before children', () => {
   );
 });
 
+test('block with optional before & after inside a wrapper which should render just before', () => {
+  testSnapshot(
+    bemto('.myBlock', {
+      content: {
+        elem: 'Content',
+        content: [
+          {
+            elem: 'NestedBefore',
+            optional: true
+          },
+          {
+            elem: 'NestedAfter',
+            optional: true
+          },
+          {
+            children: true
+          }
+        ]
+      }
+    }),
+    { __NestedBefore: 'what' },
+    'children text'
+  );
+});
+
 test('simple block with a Helper item before children with some added props', () => {
   testSnapshot(
     bemto('.myBlock', {

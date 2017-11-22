@@ -160,6 +160,23 @@ exports[`block with an array as the content of an element, but as a list 1`] = `
 </div>
 `;
 
+exports[`block with optional before & after inside a wrapper which should render just before 1`] = `
+<div
+  className="myBlock"
+>
+  <div
+    className="myBlock__Content"
+  >
+    <div
+      className="myBlock__NestedBefore"
+    >
+      what
+    </div>
+    children text
+  </div>
+</div>
+`;
+
 exports[`block with passing content to an element through props (passing proper element) 1`] = `
 <div
   className="myBlock"
