@@ -5,6 +5,23 @@ if (!global.hasGlobalStyles) {
   global.hasGlobalStyles = true
 
   const globalStyles = injectGlobal`
+
+    [class^=rsg--pathline-] {
+      display: none;
+    }
+
+    table p[class] {
+      margin-bottom: 0;
+    }
+
+    #components ~ div header > *[id] {
+      margin-bottom: 0;
+    }
+
+    #components ~ div header > * > a {
+      display: block;
+    }
+
     /* Some helper classes */
     .Grid {
       display: grid;

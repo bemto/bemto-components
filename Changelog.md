@@ -2,6 +2,7 @@
 
 ### v1.6.0 (in development)
 
+- Added docs for the external `bemto-button` component.
 - Fixed non-cloned parents array which led to incorrect render of elements in some cases.
 
 ### v1.5.0 (2017-11-18)

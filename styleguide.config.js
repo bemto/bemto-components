@@ -9,14 +9,8 @@ module.exports = {
   title: 'Bemto-components 🍱',
   showCode: true,
   sections: [
-    {
-      name: 'Introduction',
-      content: './docs/0_introduction.md'
-    },
-    {
-      name: 'Installation',
-      content: './docs/1_installation.md'
-    },
+    { name: 'Introduction', content: './docs/0_introduction.md' },
+    { name: 'Installation', content: './docs/1_installation.md' },
     {
       name: 'Features',
       _content: './docs/2_0_features.md',
@@ -25,36 +19,18 @@ module.exports = {
           name: 'HTML Structure',
           content: './docs/2_1_0_html.md',
           sections: [
-            {
-              name: 'TagString',
-              content: './docs/2_1_1_tagstring.md'
-            },
-            {
-              name: 'Context awareness',
-              content: './docs/2_1_2_context.md'
-            },
-            {
-              name: 'Prop polymorphism',
-              content: './docs/2_1_3_attributes.md'
-            },
-            {
-              name: 'Structure',
-              content: './docs/2_1_4_structure.md'
-            }
+            { name: 'TagString',         content: './docs/2_1_1_tagstring.md' },
+            { name: 'Context awareness', content: './docs/2_1_2_context.md' },
+            { name: 'Prop polymorphism', content: './docs/2_1_3_attributes.md' },
+            { name: 'Structure',         content: './docs/2_1_4_structure.md' }
           ]
         },
         {
           name: 'BEM',
           content: './docs/2_2_0_bem.md',
           sections: [
-            {
-              name: 'Elements',
-              content: './docs/2_2_1_elements.md'
-            },
-            {
-              name: 'Modifiers',
-              content: './docs/2_2_2_modifiers.md'
-            }
+            { name: 'Elements',  content: './docs/2_2_1_elements.md' },
+            { name: 'Modifiers', content: './docs/2_2_2_modifiers.md' }
           ]
         },
         {
@@ -72,6 +48,11 @@ module.exports = {
     {
       name: 'Advanced features',
       content: './docs/2_4_advanced.md',
+    },
+    {
+      name: 'Components',
+      content: './docs/3_components.md',
+      components: './node_modules/bemto-*/lib/**/index.js'
     },
     {
       name: 'Meta',
