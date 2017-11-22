@@ -566,6 +566,50 @@ test('block with elem that appears only when another elem is defined (nothing re
   );
 });
 
+test('block with elem that appears only when another elem is defined (disabled by false)', () => {
+  testSnapshot(
+    bemto('.myBlock', {
+      content: [
+        {
+          elem: 'Dependant',
+          optional: props => !props.__Helper
+        },
+        {
+          elem: 'Helper',
+          optional: true
+        },
+        {
+          children: true
+        }
+      ]
+    }),
+    { __Helper: 'hi', __Dependant: false },
+    'children text'
+  );
+});
+
+test('block with elem that appears only when another elem is defined (disabled by null)', () => {
+  testSnapshot(
+    bemto('.myBlock', {
+      content: [
+        {
+          elem: 'Dependant',
+          optional: props => !props.__Helper
+        },
+        {
+          elem: 'Helper',
+          optional: true
+        },
+        {
+          children: true
+        }
+      ]
+    }),
+    { __Helper: 'hi', __Dependant: null },
+    'children text'
+  );
+});
+
 test('simple block with a Helper item before children with some added props', () => {
   testSnapshot(
     bemto('.myBlock', {

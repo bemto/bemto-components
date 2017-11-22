@@ -3,6 +3,7 @@
 ### v1.6.0 (in development)
 
 - Added a way to pass function to `optional` prop at elem definition.
+- Added a way to disable an element by calling it as `false` or `null`.
 - Added docs for the external `bemto-button` component.
 - Fixed non-cloned parents array which led to incorrect render of elements in some cases.
 

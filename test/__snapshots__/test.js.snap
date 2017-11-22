@@ -160,6 +160,32 @@ exports[`block with an array as the content of an element, but as a list 1`] = `
 </div>
 `;
 
+exports[`block with elem that appears only when another elem is defined (disabled by false) 1`] = `
+<div
+  className="myBlock"
+>
+  <div
+    className="myBlock__Helper"
+  >
+    hi
+  </div>
+  children text
+</div>
+`;
+
+exports[`block with elem that appears only when another elem is defined (disabled by null) 1`] = `
+<div
+  className="myBlock"
+>
+  <div
+    className="myBlock__Helper"
+  >
+    hi
+  </div>
+  children text
+</div>
+`;
+
 exports[`block with elem that appears only when another elem is defined (nothing rendered) 1`] = `
 <div
   className="myBlock"
