@@ -522,6 +522,50 @@ test('block with optional before & after inside a wrapper which should render ju
   );
 });
 
+test('block with elem that appears only when another elem is defined', () => {
+  testSnapshot(
+    bemto('.myBlock', {
+      content: [
+        {
+          elem: 'Dependant',
+          optional: props => !props.__Helper
+        },
+        {
+          elem: 'Helper',
+          optional: true
+        },
+        {
+          children: true
+        }
+      ]
+    }),
+    { __Helper: 'hi' },
+    'children text'
+  );
+});
+
+test('block with elem that appears only when another elem is defined (nothing rendered)', () => {
+  testSnapshot(
+    bemto('.myBlock', {
+      content: [
+        {
+          elem: 'Dependant',
+          optional: props => !props.__Helper
+        },
+        {
+          elem: 'Helper',
+          optional: true
+        },
+        {
+          children: true
+        }
+      ]
+    }),
+    {},
+    'children text'
+  );
+});
+
 test('simple block with a Helper item before children with some added props', () => {
   testSnapshot(
     bemto('.myBlock', {

@@ -160,6 +160,30 @@ exports[`block with an array as the content of an element, but as a list 1`] = `
 </div>
 `;
 
+exports[`block with elem that appears only when another elem is defined (nothing rendered) 1`] = `
+<div
+  className="myBlock"
+>
+  children text
+</div>
+`;
+
+exports[`block with elem that appears only when another elem is defined 1`] = `
+<div
+  className="myBlock"
+>
+  <div
+    className="myBlock__Dependant"
+  />
+  <div
+    className="myBlock__Helper"
+  >
+    hi
+  </div>
+  children text
+</div>
+`;
+
 exports[`block with optional before & after inside a wrapper which should render just before 1`] = `
 <div
   className="myBlock"
