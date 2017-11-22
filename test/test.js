@@ -77,6 +77,50 @@ test('with class name only', () => {
   );
 });
 
+test('with some default props', () => {
+  testSnapshot(
+    bemto('div', {
+      props: { title: 'title!' }
+    })
+  );
+});
+
+test('with some prop as function', () => {
+  testSnapshot(
+    bemto('div', {
+      props: { tabIndex: props=>1 }
+    }),
+    { href: '#x', onClick: ()=>alert('lol') }
+  );
+});
+
+test('with some prop as function, based on another prop (faulty)', () => {
+  testSnapshot(
+    bemto('button', {
+      props: { tabIndex: props=>props.href && 1 }
+    }),
+    {}
+  );
+});
+
+test('with some prop as function, based on another prop (truth-y)', () => {
+  testSnapshot(
+    bemto('button', {
+      props: { tabIndex: props=>props.href && 1 }
+    }),
+    { href: '#x' }
+  );
+});
+
+test('with onclick as predefined function', () => {
+  testSnapshot(
+    bemto('div', {
+      props: { onClick: ()=>()=>alert('lol') }
+    }),
+    { href: '#x' }
+  );
+});
+
 test('with modifiers passed in the modifiers object', () => {
   testSnapshot(
     bemto('.block', {

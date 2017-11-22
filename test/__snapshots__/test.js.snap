@@ -995,6 +995,13 @@ exports[`with nested bemto block in select context 1`] = `
 </select>
 `;
 
+exports[`with onclick as predefined function 1`] = `
+<a
+  href="#x"
+  onClick={[Function]}
+/>
+`;
+
 exports[`with simple element 1`] = `
 <div
   className="myBlock myBlock_blockMod_value"
@@ -1013,6 +1020,29 @@ exports[`with simple element using chaining 1`] = `
     className="myBlock__MyElem myBlock__MyElem_elemMod_value"
   />
 </div>
+`;
+
+exports[`with some default props 1`] = `
+<div
+  title="title!"
+/>
+`;
+
+exports[`with some prop as function 1`] = `
+<a
+  href="#x"
+  onClick={[Function]}
+  tabIndex={1}
+/>
+`;
+
+exports[`with some prop as function, based on another prop (faulty) 1`] = `<button />`;
+
+exports[`with some prop as function, based on another prop (truth-y) 1`] = `
+<a
+  href="#x"
+  tabIndex={1}
+/>
 `;
 
 exports[`with tag and explicit class name 1`] = `
