@@ -1,6 +1,6 @@
 ## Bemto-components changelog
 
-### v1.6.0 (in development)
+### v1.6.0 (2017-11-22)
 
 - Added a way to pass function to props in definition.
 - Added a way to pass function to `optional` prop at elem definition.
