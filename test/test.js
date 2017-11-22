@@ -412,6 +412,13 @@ test('should become a submit button based on an attrubute', () => {
   );
 });
 
+test('should become a reset button based on an attrubute', () => {
+  testSnapshot(
+    bemto('.myResetButton'),
+    { type: 'reset' }
+  );
+});
+
 test('should become a radio button based on an attrubute', () => {
   testSnapshot(
     bemto('.myRadio'),

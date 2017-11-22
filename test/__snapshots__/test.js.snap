@@ -317,6 +317,13 @@ exports[`should become a radio button based on an attrubute 1`] = `
 />
 `;
 
+exports[`should become a reset button based on an attrubute 1`] = `
+<button
+  className="myResetButton"
+  type="reset"
+/>
+`;
+
 exports[`should become a submit button based on an attrubute 1`] = `
 <button
   className="mySubmitButton"
