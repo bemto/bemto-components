@@ -548,6 +548,82 @@ test('simple block with a Helper item before children', () => {
   );
 });
 
+test('block with a textnode Helper before content (tag: false)', () => {
+  testSnapshot(
+    bemto('.myBlock', {
+      content: [
+        {
+          elem: 'Helper',
+          tag: false
+        },
+        {
+          elem: 'Content',
+          children: true
+        }
+      ]
+    }),
+    { __Helper: 'hewwo' },
+    'children text'
+  );
+});
+
+
+test('block with a textnode Helper before content (tag: "")', () => {
+  testSnapshot(
+    bemto('.myBlock', {
+      content: [
+        {
+          elem: 'Helper',
+          tag: ''
+        },
+        {
+          elem: 'Content',
+          children: true
+        }
+      ]
+    }),
+    { __Helper: 'hewwo' },
+    'children text'
+  );
+});
+
+test('block with a textnode Helper before content (omitTag: true)', () => {
+  testSnapshot(
+    bemto('.myBlock', {
+      content: [
+        {
+          elem: 'Helper',
+          omitTag: true
+        },
+        {
+          elem: 'Content',
+          children: true
+        }
+      ]
+    }),
+    { __Helper: 'hewwo' },
+    'children text'
+  );
+});
+
+test('block with a textnode Helper before content (omitTag: true at call)', () => {
+  testSnapshot(
+    bemto('.myBlock', {
+      content: [
+        {
+          elem: 'Helper'
+        },
+        {
+          elem: 'Content',
+          children: true
+        }
+      ]
+    }),
+    { __Helper: { omitTag: true, content: 'hewwo' } },
+    'children text'
+  );
+});
+
 test('block with optional before & after inside a wrapper which should render just before', () => {
   testSnapshot(
     bemto('.myBlock', {

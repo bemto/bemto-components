@@ -26,15 +26,14 @@
   },
   "homepage": "https://github.com/kizu/bemto-components#readme",
   "dependencies": {
-    "react": "16.1.0"
+    "react": "16.1.1"
   },
   "devDependencies": {
     "jest": "^21.2.1",
-    "bemto-button": "^0.1.0",
     "react-docgen-annotation-resolver": "^1.0.0",
-    "react-dom": "^16.1.0",
+    "react-dom": "^16.1.1",
     "react-styleguidist": "^6.0.33",
-    "react-test-renderer": "16.1.0",
+    "react-test-renderer": "16.1.1",
     "styled-components": "^2.2.3",
     "webpack": "^3.8.1"
   }
