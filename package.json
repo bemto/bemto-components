@@ -29,6 +29,7 @@
     "react": "16.1.1"
   },
   "devDependencies": {
+    "bemto-button": "^0.1.0",
     "jest": "^21.2.1",
     "react-docgen-annotation-resolver": "^1.0.0",
     "react-dom": "^16.1.1",
