@@ -373,14 +373,14 @@ exports[`should become a button based on an attrubute 1`] = `
 exports[`should become a label based on an attrubute 1`] = `
 <label
   className="myLabel"
-  for="myID"
+  htmlFor="myID"
 />
 `;
 
 exports[`should become a label based on an attrubute, even when defined as a span 1`] = `
 <label
   className="myLabel"
-  for="myID"
+  htmlFor="myID"
 />
 `;
 
