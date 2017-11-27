@@ -412,14 +412,14 @@ test('should become an anchor based on an attrubute, even when defined as a butt
 test('should become a label based on an attrubute', () => {
   testSnapshot(
     bemto('.myLabel'),
-    { for: 'myID' }
+    { htmlFor: 'myID' }
   );
 });
 
 test('should become a label based on an attrubute, even when defined as a span', () => {
   testSnapshot(
     bemto('span.myLabel'),
-    { for: 'myID' }
+    { htmlFor: 'myID' }
   );
 });
 
