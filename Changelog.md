@@ -1,5 +1,9 @@
 ## Bemto-components changelog
 
+### v1.6.1 (2017-11-27)
+
+- Fixed `label` tag selection condition ([#32](https://github.com/kizu/bemto-components/pull/32), thanks to [@andrew--r](https://github.com/andrew--r)).
+
 ### v1.6.0 (2017-11-22)
 
 - Added a way to pass function to props in definition.
