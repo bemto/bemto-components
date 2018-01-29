@@ -627,6 +627,19 @@ exports[`simple block with a Helper item before children with some added props 1
 </div>
 `;
 
+exports[`simple block with a Helper item before children with some added props based on parent attrs 1`] = `
+<div
+  className="myBlock"
+  title="Oh wow"
+>
+  <div
+    className="myBlock__Helper"
+    title="Oh wow!!!"
+  />
+  children text
+</div>
+`;
+
 exports[`simple block with a Helper item that have a string content 1`] = `
 <div
   className="myBlock"

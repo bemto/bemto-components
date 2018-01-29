@@ -98,6 +98,8 @@ if (!global.hasGlobalStyles) {
     main > section > section:not(:first-child) article > div[class] {
       display: flex;
       flex-direction: row-reverse;
+      overflow: hidden;
+      resize: horizontal;
 
       @media (max-width: 800px) {
         flex-direction: column-reverse;
@@ -121,6 +123,10 @@ if (!global.hasGlobalStyles) {
         /* Make errors more readable */
         & pre {
           white-space: pre-wrap;
+        }
+
+        & > div {
+          max-width: 100%;
         }
       }
       /* Code pane */

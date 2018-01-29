@@ -824,6 +824,26 @@ test('simple block with a Helper item before children with some added props', ()
   );
 });
 
+test('simple block with a Helper item before children with some added props based on parent attrs', () => {
+  testSnapshot(
+    bemto('.myBlock', {
+      content: [
+        {
+          elem: 'Helper',
+          props: {
+            title: (props) => props.title + '!!!',
+          }
+        },
+        {
+          children: true
+        }
+      ]
+    }),
+    { title: 'Oh wow' },
+    'children text'
+  );
+});
+
 test('with nested bemto block in inline context', () => {
   testSnapshot(
     bemto('span.inlineClass1'),

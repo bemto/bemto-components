@@ -1,5 +1,9 @@
 ## Bemto-components changelog
 
+### v1.6.2 (2018-01-29)
+
+- Fixed the props passed to props generators on elements (pass block's props there).
+
 ### v1.6.1 (2017-11-27)
 
 - Fixed `label` tag selection condition ([#32](https://github.com/kizu/bemto-components/pull/32), thanks to [@andrew--r](https://github.com/andrew--r)).
