@@ -708,6 +708,62 @@ test('block with a Helper before content with overridden tag name', () => {
   );
 });
 
+test('block with a Helper with function tag name', () => {
+  testSnapshot(
+    bemto('span.myBlock', {
+      content: [
+        {
+          elem: 'Helper',
+          tag: p => p.foo === 'bar' && 'strong' || 'div'
+        },
+        {
+          elem: 'Content',
+          children: true
+        }
+      ]
+    }),
+    { foo: 'bar' },
+    'children text'
+  );
+});
+
+test('block with a Helper with function tag name (fallback test)', () => {
+  testSnapshot(
+    bemto('span.myBlock', {
+      content: [
+        {
+          elem: 'Helper',
+          tag: p => p.foo === 'bar' && 'strong' || 'div'
+        },
+        {
+          elem: 'Content',
+          children: true
+        }
+      ]
+    }),
+    {},
+    'children text'
+  );
+});
+
+test('block with a Helper with function tag name, overridden at call', () => {
+  testSnapshot(
+    bemto('span.myBlock', {
+      content: [
+        {
+          elem: 'Helper'
+        },
+        {
+          elem: 'Content',
+          children: true
+        }
+      ]
+    }),
+    { foo: 'bar', __Helper: { content: 'lol', tag: p => p.foo === 'bar' && 'em' || 'div' } },
+    'children text'
+  );
+});
+
 test('block with optional before & after inside a wrapper which should render just before', () => {
   testSnapshot(
     bemto('.myBlock', {

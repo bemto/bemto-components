@@ -3,6 +3,7 @@
 ### v1.7.0 (2018-01-30)
 
 - Added way to redefine tag name from element call.
+- Added way to use function for tagnames on elements.
 
 ### v1.6.2 (2018-01-29)
 

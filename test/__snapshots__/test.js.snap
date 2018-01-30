@@ -39,6 +39,55 @@ exports[`block with a Helper having a modifier on base level, should override pr
 </div>
 `;
 
+exports[`block with a Helper with function tag name (fallback test) 1`] = `
+<span
+  className="myBlock"
+>
+  <span
+    className="myBlock__Helper"
+  />
+  <span
+    className="myBlock__Content"
+  >
+    children text
+  </span>
+</span>
+`;
+
+exports[`block with a Helper with function tag name 1`] = `
+<span
+  className="myBlock"
+  foo="bar"
+>
+  <strong
+    className="myBlock__Helper"
+  />
+  <span
+    className="myBlock__Content"
+  >
+    children text
+  </span>
+</span>
+`;
+
+exports[`block with a Helper with function tag name, overridden at call 1`] = `
+<span
+  className="myBlock"
+  foo="bar"
+>
+  <em
+    className="myBlock__Helper"
+  >
+    lol
+  </em>
+  <span
+    className="myBlock__Content"
+  >
+    children text
+  </span>
+</span>
+`;
+
 exports[`block with a complex elements structure 1`] = `
 <div
   className="myBlock"
