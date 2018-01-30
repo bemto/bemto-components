@@ -1371,6 +1371,54 @@ test('block with passing content to an element through props (passing proper ele
   );
 });
 
+test('block with passing content to an element through props (passing proper element, with a modifier)', () => {
+  const MyBlock = bemto('.myBlock', {
+    content: [
+      {
+        elem: 'Helper',
+        _test: true
+      },
+      {
+        children: true
+      }
+    ]
+  });
+  testSnapshot(
+    MyBlock,
+    {
+      __Helper: React.createElement(bemto('span.helperContent'))
+    },
+    'children text'
+  );
+});
+
+test('block with passing content to an element through props (passing proper element, with an overridden modifier)', () => {
+  const MyBlock = bemto('.myBlock', {
+    content: [
+      {
+        elem: 'Helper',
+        _test: true
+      },
+      {
+        children: true
+      }
+    ]
+  });
+  testSnapshot(
+    MyBlock,
+    {
+      __Helper: {
+        content: React.createElement(bemto('span.helperContent')),
+        modifiers: {
+          _test2: true,
+          _test: false
+        }
+      }
+    },
+    'children text'
+  );
+});
+
 // FIXME: problem with array and keys =_= so this test gives a warning
 /*
 test('block with passing content to an element through props (passing a list of proper elements)', () => {

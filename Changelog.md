@@ -4,6 +4,7 @@
 
 - Added way to redefine tag name from element call.
 - Added way to use function for tagnames on elements.
+- Fixed modifiers and stuff when passing a component to content of an element.
 
 ### v1.6.2 (2018-01-29)
 

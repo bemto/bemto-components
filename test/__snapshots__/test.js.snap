@@ -382,6 +382,36 @@ exports[`block with passing content to an element through props (passing proper 
 </div>
 `;
 
+exports[`block with passing content to an element through props (passing proper element, with a modifier) 1`] = `
+<div
+  className="myBlock"
+>
+  <div
+    className="myBlock__Helper myBlock__Helper_test"
+  >
+    <span
+      className="helperContent"
+    />
+  </div>
+  children text
+</div>
+`;
+
+exports[`block with passing content to an element through props (passing proper element, with an overridden modifier) 1`] = `
+<div
+  className="myBlock"
+>
+  <div
+    className="myBlock__Helper myBlock__Helper_test2"
+  >
+    <span
+      className="helperContent"
+    />
+  </div>
+  children text
+</div>
+`;
+
 exports[`block with passing content to an element through props 1`] = `
 <div
   className="myBlock"
