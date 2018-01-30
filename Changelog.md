@@ -1,5 +1,9 @@
 ## Bemto-components changelog
 
+### v1.7.0 (2018-01-30)
+
+- Added way to redefine tag name from element call.
+
 ### v1.6.2 (2018-01-29)
 
 - Fixed the props passed to props generators on elements (pass block's props there).

@@ -690,6 +690,24 @@ test('block with a textnode Helper before content (omitTag: true at call)', () =
   );
 });
 
+test('block with a Helper before content with overridden tag name', () => {
+  testSnapshot(
+    bemto('.myBlock', {
+      content: [
+        {
+          elem: 'Helper'
+        },
+        {
+          elem: 'Content',
+          children: true
+        }
+      ]
+    }),
+    { __Helper: { tag: 'strong', content: 'hewwo' } },
+    'children text'
+  );
+});
+
 test('block with optional before & after inside a wrapper which should render just before', () => {
   testSnapshot(
     bemto('.myBlock', {

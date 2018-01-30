@@ -1,5 +1,22 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
+exports[`block with a Helper before content with overridden tag name 1`] = `
+<div
+  className="myBlock"
+>
+  <strong
+    className="myBlock__Helper"
+  >
+    hewwo
+  </strong>
+  <div
+    className="myBlock__Content"
+  >
+    children text
+  </div>
+</div>
+`;
+
 exports[`block with a Helper having a modifier on base level 1`] = `
 <div
   className="myBlock"

@@ -30,10 +30,11 @@
   },
   "devDependencies": {
     "bemto-button": "^0.2.0",
+    "bemto-overflower": "^0.1.0",
     "jest": "^21.2.1",
     "react-docgen-annotation-resolver": "^1.0.0",
     "react-dom": "^16.1.1",
-    "react-styleguidist": "^6.0.33",
+    "react-styleguidist": "6.0.33",
     "react-test-renderer": "16.1.1",
     "styled-components": "^2.2.3",
     "webpack": "^3.8.1"
