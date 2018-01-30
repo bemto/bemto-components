@@ -1,6 +1,6 @@
 ## Bemto-components changelog
 
-### v1.7.0 (2018-01-30)
+### v1.7.0 (2018-01-31)
 
 - Added way to redefine tag name from element call.
 - Added way to use function for tagnames on elements.
