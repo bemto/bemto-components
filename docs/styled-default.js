@@ -25,6 +25,7 @@ if (!global.hasGlobalStyles) {
     /* Some helper classes */
     .Grid {
       display: grid;
+      grid-template-columns: 100%;
       grid-gap: 10px;
     }
 

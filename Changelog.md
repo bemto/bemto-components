@@ -1,5 +1,9 @@
 ## Bemto-components changelog
 
+### v1.8.0 (in development)
+
+- Added a way to redefine the root tag.
+
 ### v1.7.0 (2018-01-31)
 
 - Added way to redefine tag name from element call.

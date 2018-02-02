@@ -933,6 +933,22 @@ exports[`simple block with defaulty content 1`] = `
 </div>
 `;
 
+exports[`with a calculated component given as \`isTag\` prop (faulty) 1`] = `
+<em
+  className="foo"
+>
+  Hello
+</em>
+`;
+
+exports[`with a calculated component given as \`isTag\` prop 1`] = `
+<span
+  className="wrappedComponent foo foo_foo"
+>
+  Hello
+</span>
+`;
+
 exports[`with a more complex nested context 1`] = `
 <ol>
   <li>
@@ -1019,6 +1035,15 @@ exports[`with class name only 1`] = `
 <div
   className="block block_mod_value"
 />
+`;
+
+exports[`with component given as \`isTag\` prop 1`] = `
+<a
+  className="wrappedComponent foo foo_foo"
+  href="#x"
+>
+  Hello
+</a>
 `;
 
 exports[`with element created through __BemtoElem prop 1`] = `
@@ -1262,6 +1287,14 @@ exports[`with tag and explicit id and class name 1`] = `
   className="block block_mod_value"
   id="id"
 />
+`;
+
+exports[`with tag given as \`isTag\` prop 1`] = `
+<strong
+  className="foo"
+>
+  Hello
+</strong>
 `;
 
 exports[`with tag name and external className (options as an object with a parsed tag) 1`] = `

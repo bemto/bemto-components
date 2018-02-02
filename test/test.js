@@ -42,6 +42,41 @@ test('with tagString as well as with options', () => {
   );
 });
 
+test('with tag given as `isTag` prop', () => {
+  testSnapshot(
+    bemto(),
+    { className: 'foo', __is: 'strong' },
+    "Hello"
+  );
+});
+
+test('with component given as `isTag` prop', () => {
+  const wrappedComponent = bemto('span.wrappedComponent');
+  testSnapshot(
+    bemto(),
+    { className: 'foo', __is: wrappedComponent, _foo: true, href: '#x' },
+    "Hello"
+  );
+});
+
+test('with a calculated component given as `isTag` prop', () => {
+  const wrappedComponent = bemto('span.wrappedComponent');
+  testSnapshot(
+    bemto(),
+    { className: 'foo', __is: props => props._foo ? wrappedComponent : 'em', _foo: true },
+    "Hello"
+  );
+});
+
+test('with a calculated component given as `isTag` prop (faulty)', () => {
+  const wrappedComponent = bemto('span.wrappedComponent');
+  testSnapshot(
+    bemto(),
+    { className: 'foo', __is: props => props._foo ? wrappedComponent : 'em', _foo: false },
+    "Hello"
+  );
+});
+
 test('without anything, but with external className', () => {
   testSnapshot(
     bemto(),

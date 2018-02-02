@@ -22,7 +22,8 @@ module.exports = {
             { name: 'TagString',         content: './docs/2_1_1_tagstring.md' },
             { name: 'Context awareness', content: './docs/2_1_2_context.md' },
             { name: 'Prop polymorphism', content: './docs/2_1_3_attributes.md' },
-            { name: 'Structure',         content: './docs/2_1_4_structure.md' }
+            { name: 'Structure',         content: './docs/2_1_4_structure.md' },
+            { name: 'Root tag redefine', content: './docs/2_1_5_is.md' }
           ]
         },
         {
