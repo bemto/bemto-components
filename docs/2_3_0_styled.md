@@ -18,8 +18,7 @@ Let me rewrite the example component from the BEM part using them:
           elem: 'helper',
           optional: true,
           modifiers: {
-            _dark:
-              (props, blockProps) => !!blockProps._dark
+            _dark: props => !!props._dark
           }
         }
       ]
@@ -70,4 +69,4 @@ The best part there is that all the classNames generated for elements and modifi
 
 That means: our styles are isolated, have the same basic specificity and are coupled with the component itself. And they're really, really to create this way!
 
-Another thing that you can see is not that related to the styled-components themselves — its a modifiers feature — but it makes much more sense there. Its the fact you can use the second arguments of the elem's modifier object to modify it based on the block's call params: `(props, blockProps) => !!blockProps._dark`, and that means that if you don't want to use the CSS' way of doing context styles, you can really easily do it this way and get the tidy selector with just one className.
+Another thing that you can see is not that related to the styled-components themselves — its a modifiers feature — but it makes much more sense there. Its the fact you can use the argument of the elem's modifier object to modify it based on the block's call params: `props => !!props._dark`, and that means that if you don't want to use the CSS' way of doing context styles, you can really easily do it this way and get the tidy selector with just one className.

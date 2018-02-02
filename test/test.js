@@ -250,9 +250,9 @@ test('with modifiers for helper passed in the modifiers object based on other pr
         {
           elem: 'Helper',
           modifiers: {
-            _hasTitle: (props, blockProps) => !!blockProps.title,
-            _titleText: (props, blockProps) => blockProps.title,
-            _moreThan9000: (props, blockProps) => blockProps.power > 9000
+            _hasTitle: props => !!props.title,
+            _titleText: props => props.title,
+            _moreThan9000: props => props.power > 9000
           }
         }
       ],

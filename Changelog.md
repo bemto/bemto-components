@@ -1,8 +1,9 @@
 ## Bemto-components changelog
 
-### v1.8.0 (in development)
+### v2.0.0 (in development)
 
 - Added a way to redefine the root tag.
+- Breaking change: changed the way arguments are passed to modifier functions (just one argument, without element's own props).
 - Moved from kizu/bemto-components to bemto/bemto-components.
 
 ### v1.7.0 (2018-01-31)

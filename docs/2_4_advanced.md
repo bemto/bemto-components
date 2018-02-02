@@ -2,7 +2,16 @@
 
 ### Functions as prop values
 
-In a lot of places bemto-components can accept functions instead of just values. Those functions would be evaluated with original block's props as an argument in most cases.
+In a lot of places bemto-components can accept functions instead of just values. Those functions would be evaluated with original block's props as an argument.
+
+Currently, bemto-components support functions for setting:
+
+- modifiers;
+- props;
+- optionality of elements;
+- tag names.
+
+***Note:** due to this mechanism, you should make sure that whenever you need an actual function as a prop argument in bemto context, you'll need to wrap it with an extra function that would return your function.
 
 ### Other stuff coming soon!
 

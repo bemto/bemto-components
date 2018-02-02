@@ -11,8 +11,7 @@ const Block = styled(bemto({
       elem: 'helper',
       optional: true,
       modifiers: {
-        _dark:
-          (props, blockProps) => !!blockProps._dark
+        _dark: props => !!props._dark
       }
     }
   ]
