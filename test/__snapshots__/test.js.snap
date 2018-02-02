@@ -1,5 +1,43 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
+exports[`block that passes all its props to one of its children 1`] = `
+<div
+  className="myBlock myBlock_mod"
+>
+  <div
+    className="myBlock__Helper"
+  />
+  <a
+    className="myBlock__Controller"
+    disabled={true}
+    href="#x"
+    id="LolID"
+    title="my title"
+  >
+    hello
+  </a>
+</div>
+`;
+
+exports[`block that passes most of its props to one of its children 1`] = `
+<div
+  className="myBlock myBlock_mod"
+  title="my title"
+>
+  <div
+    className="myBlock__Helper"
+    id="LolID"
+  />
+  <a
+    className="myBlock__Controller"
+    disabled={true}
+    href="#x"
+  >
+    hello
+  </a>
+</div>
+`;
+
 exports[`block with a Helper before content with overridden tag name 1`] = `
 <div
   className="myBlock"

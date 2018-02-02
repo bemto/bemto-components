@@ -1849,3 +1849,58 @@ test('block with a more complex list system inside, now with props O_O', () => {
     'children text'
   );
 });
+
+test('block that passes most of its props to one of its children', () => {
+  testSnapshot(
+    bemto('.myBlock', {
+      acceptProps: ['title'],
+      content: [
+        {
+          elem: 'Helper',
+          acceptProps: ['id']
+        },
+        {
+          elem: 'Controller',
+          acceptProps: {
+            except: ['id']
+          },
+          children: true
+        }
+      ]
+    }),
+    {
+      href: '#x',
+      disabled: true,
+      id: 'LolID',
+      title: 'my title',
+      _mod: true
+    },
+    'hello'
+  );
+});
+
+test('block that passes all its props to one of its children', () => {
+  testSnapshot(
+    bemto('.myBlock', {
+      acceptProps: [],
+      content: [
+        {
+          elem: 'Helper'
+        },
+        {
+          elem: 'Controller',
+          acceptProps: true,
+          children: true
+        }
+      ]
+    }),
+    {
+      href: '#x',
+      disabled: true,
+      id: 'LolID',
+      title: 'my title',
+      _mod: true
+    },
+    'hello'
+  );
+});
