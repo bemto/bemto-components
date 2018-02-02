@@ -2,8 +2,8 @@
 
 [![Build Status][build]][build-link] [![NPM package version][version]][version-link]
 
-[build]: https://travis-ci.org/kizu/bemto-components.svg?branch=master
-[build-link]: https://travis-ci.org/kizu/bemto-components
+[build]: https://travis-ci.org/bemto/bemto-components.svg?branch=master
+[build-link]: https://travis-ci.org/bemto/bemto-components
 [version]: https://img.shields.io/npm/v/bemto-components.svg
 [version-link]: https://www.npmjs.com/package/bemto-components
 

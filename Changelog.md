@@ -3,11 +3,13 @@
 ### v1.8.0 (in development)
 
 - Added a way to redefine the root tag.
+- Moved from kizu/bemto-components to bemto/bemto-components.
 
 ### v1.7.0 (2018-01-31)
 
 - Added way to redefine tag name from element call.
 - Added way to use function for tagnames on elements.
+- Added docs for the external `bemto-overflower` component.
 - Fixed modifiers and stuff when passing a component to content of an element.
 
 ### v1.6.2 (2018-01-29)
@@ -16,7 +18,7 @@
 
 ### v1.6.1 (2017-11-27)
 
-- Fixed `label` tag selection condition ([#32](https://github.com/kizu/bemto-components/pull/32), thanks to [@andrew--r](https://github.com/andrew--r)).
+- Fixed `label` tag selection condition ([#32](https://github.com/bemto/bemto-components/pull/32), thanks to [@andrew--r](https://github.com/andrew--r)).
 
 ### v1.6.0 (2017-11-22)
 
@@ -68,7 +70,7 @@
 - Added a basic classNames/id parser to the tagString argument.
 - Fixed a rogue modifier whenever there was a single pregenerated className.
 - Fixed unneeded rendering of props started with underscore as attributes in React 16.
-- Added basic tests using jest ([#7](https://github.com/kizu/bemto-components/pull/7), thanks to [@SevInf](https://github.com/SevInf)).
+- Added basic tests using jest ([#7](https://github.com/bemto/bemto-components/pull/7), thanks to [@SevInf](https://github.com/SevInf)).
 
 ### v1.0.0 (2017-10-17)
 

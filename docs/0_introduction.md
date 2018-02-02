@@ -2,12 +2,12 @@
 
 Smart components for using [BEM methodology](https://en.bem.info/methodology/quick-start/) with [React](https://reactjs.org/). Best used together with [styled-components](https://www.styled-components.com/).
 
-<a class="github-button" href="https://github.com/kizu/bemto-components" data-show-count="true" aria-label="Star kizu/bemto-components on GitHub">bemto-components ★</a>
+<a class="github-button" href="https://github.com/bemto/bemto-components" data-show-count="true" aria-label="Star bemto-components on GitHub">bemto-components ★</a>
 [![NPM package version][version]][version-link] 
 [![Build Status][build]][build-link]
 
-[build]: https://travis-ci.org/kizu/bemto-components.svg?branch=master
-[build-link]: https://travis-ci.org/kizu/bemto-components
+[build]: https://travis-ci.org/bemto/bemto-components.svg?branch=master
+[build-link]: https://travis-ci.org/bemto/bemto-components
 [version]: https://img.shields.io/npm/v/bemto-components.svg
 [version-link]: https://www.npmjs.com/package/bemto-components
 

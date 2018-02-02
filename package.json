@@ -11,7 +11,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/kizu/bemto-components.git"
+    "url": "git+https://github.com/bemto/bemto-components.git"
   },
   "keywords": [
     "bem",
@@ -22,9 +22,9 @@
   "author": "Roman Komarov <kizu@kizu.ru>",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/kizu/bemto-components/issues"
+    "url": "https://github.com/bemto/bemto-components/issues"
   },
-  "homepage": "https://github.com/kizu/bemto-components#readme",
+  "homepage": "https://github.com/bemto/bemto-components#readme",
   "dependencies": {
     "react": "16.1.1"
   },
