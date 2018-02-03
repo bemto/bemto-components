@@ -1904,3 +1904,39 @@ test('block that passes all its props to one of its children', () => {
     'hello'
   );
 });
+
+
+test('block with custom state constructor', () => {
+  testSnapshot(
+    bemto('.myBlock', {
+      initialState: props => ({
+        myStateItem: props.bar === 'baz' && true
+      }),
+      props: {
+        href: (props, state) => state.myStateItem ? '#yep' : false
+      },
+      _foo: (props, state) => state.myStateItem ? true : false
+    }),
+    {
+      bar: 'baz'
+    },
+    'hello'
+  );
+});
+
+test('block with custom state constructor (faulty)', () => {
+  testSnapshot(
+    bemto('.myBlock', {
+      initialState: props => ({
+        myStateItem: props.bar === 'baz' && true
+      }),
+      props: {
+        href: (props, state) => state.myStateItem ? '#yep' : false
+      },
+      _foo: (props, state) => state.myStateItem ? true : false
+    }),
+    {
+    },
+    'hello'
+  );
+});

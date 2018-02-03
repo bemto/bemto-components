@@ -338,6 +338,24 @@ exports[`block with an array as the content of an element, but as a list 1`] = `
 </div>
 `;
 
+exports[`block with custom state constructor (faulty) 1`] = `
+<div
+  className="myBlock"
+>
+  hello
+</div>
+`;
+
+exports[`block with custom state constructor 1`] = `
+<a
+  bar="baz"
+  className="myBlock myBlock_foo"
+  href="#yep"
+>
+  hello
+</a>
+`;
+
 exports[`block with elem that appears only when another elem is defined (disabled by false) 1`] = `
 <div
   className="myBlock"

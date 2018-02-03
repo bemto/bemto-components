@@ -2,6 +2,7 @@
 
 ### v2.0.0 (in development)
 
+- Added a way to handle state of an element and to adapt props&modifiers based on state.
 - Added a way to pass props from block to elements and disallow props on blocks.
 - Added a way to redefine the root tag.
 - Breaking change: changed the way arguments are passed to modifier functions (just one argument, without element's own props).
