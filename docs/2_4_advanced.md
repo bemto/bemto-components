@@ -8,6 +8,34 @@ Whenever it is present on a Block, it would determine which props would be accep
 
 Whenever it is used on Element, it would accept every prop _except_ for those that are accepted by Block.
 
+    const MyComplexBlock = bemto({
+      acceptProps: [],
+      content: [
+        {
+          elem: 'Icon',
+          acceptProps: ['src', 'alt', 'title']
+        },
+        {
+          elem: 'Content',
+          acceptProps: ['href', 'target'],
+          children: true
+        }
+      ]
+    });
+
+    <MyComplexBlock
+      className='MyBlock'
+      href='#advanced-features'
+      target='_blank'
+      src='https://placebear.com/32/32'
+      alt='Image of a bear'
+      title='Just a bear'
+    >
+      Hello!
+    </MyComplexBlock>
+
+You can see how there is an icon that accepts `src` and some ather props, and there is an inner link that accepts `href` and `target`. It can be possible to do the same by mentioning [elements](#elements) specificly, but splitting props is much more handy and you don't need to know what props you should pass to which elements.
+
 Possible values for `acceptProps`:
 
 - `true` — to accept every prop (default for Block);
@@ -31,6 +59,8 @@ Currently, bemto-components support functions for setting:
 Those functions can be used with up to three arguments: `props`, `state` and `component`. This would allow you to adapt any of the above based on the element's props, component's state, or to even go deeper by using the component itself.
 
 ***Note:** due to this mechanism, you should make sure that whenever you need an actual function as a prop argument in bemto context, you'll need to wrap it with an extra function that would return your function.
+
+The example for the next section on “handling state” shows how all of this works.
 
 ### Handling state
 
@@ -79,10 +109,10 @@ We just mentioned that we can accept `state` when using functions for modifiers 
       }
     `;
 
-    <p className='Grid'>
+    <div className='Grid'>
         <MyInput />
         <MyInput defaultValue='With value' />
-    </p>
+    </div>
 
 You can see how different advanced features are used in this example: how we create an inner element, pass all the properties to this inner element, but have our modifiers on the top level and attach events on the input inside that handle the state of our whole component.
 

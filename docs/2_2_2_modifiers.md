@@ -83,6 +83,16 @@ You can see how in the above example:
 3. We can make a modifier's value to depend on component's other props.
 4. As what we get in result is just CSS, we can then just add proper overrides and get desired result.
 
+There is also a shortcut for modifiers: its possible not to group them in a `modifiers` object, but use them directly in the bemto object's config:
+
+``` js static
+const Block = bemto('.block', {
+  _dark: true,
+  _big: props => !!props.__helper,
+  content: […]
+};
+```
+
 - - -
 
 There can be a lot of other ways to use modifers: you can use not only boolean ones, but pass string values for them; they're available for elements as well, for example; and, as with elements, we have a lot of plans to enhance them even more in the next releases, as well as document all the current uses for them. Play with them! But maybe first read below about styled-components, as playing with elements, modifiers AND styled-components at the same time can be really fun!
