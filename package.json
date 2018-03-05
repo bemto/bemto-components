@@ -29,10 +29,11 @@
     "react": "16.1.1"
   },
   "devDependencies": {
-    "bemto-button": "^0.3.0",
-    "bemto-overflower": "^0.2.0",
+    "bemto-button": "^0.4.0",
+    "bemto-overflower": "^0.3.0",
     "jest": "^22.4.2",
     "react-docgen-annotation-resolver": "^1.0.0",
+    "react-dom": "^16.1.1",
     "react-styleguidist": "6.0.33",
     "react-test-renderer": "16.1.1",
     "styled-components": "^3.1.6",
