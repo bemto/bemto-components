@@ -1,6 +1,6 @@
 ## Bemto-components changelog
 
-### v2.0.0 (in development)
+### v2.0.0 (2018-03-05)
 
 - Added a way to handle state of an element and to adapt props&modifiers based on state.
 - Added a way to pass props from block to elements and disallow props on blocks.
