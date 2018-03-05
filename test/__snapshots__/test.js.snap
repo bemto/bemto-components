@@ -1071,16 +1071,6 @@ exports[`with a wrapped component 1`] = `
 />
 `;
 
-exports[`with block that has multiple classes and with an element that has a tagString 1`] = `
-<div
-  className="myBlock1 myBlock2 myBlock1_blockMod_value myBlock2_blockMod_value"
->
-  <span
-    className="extraElemClass extraElemCallClass myBlock1__myElem myBlock2__myElem extraElemClass_elemMod_value extraElemCallClass_elemMod_value myBlock1__myElem_elemMod_value myBlock2__myElem_elemMod_value"
-  />
-</div>
-`;
-
 exports[`with boolean modifier 1`] = `
 <div
   className="block block_mod"
@@ -1289,26 +1279,6 @@ exports[`with onclick as predefined function 1`] = `
 />
 `;
 
-exports[`with simple element 1`] = `
-<div
-  className="myBlock myBlock_blockMod_value"
->
-  <div
-    className="myBlock__myElem myBlock__myElem_elemMod_value"
-  />
-</div>
-`;
-
-exports[`with simple element using chaining 1`] = `
-<div
-  className="myBlock myBlock_blockMod_value"
->
-  <div
-    className="myBlock__MyElem myBlock__MyElem_elemMod_value"
-  />
-</div>
-`;
-
 exports[`with some default props 1`] = `
 <div
   title="title!"
@@ -1376,20 +1346,6 @@ exports[`with tagString as well as with options 1`] = `
   className="optCls tgsClsnm block optCls_mod_value tgsClsnm_mod_value block_mod_value"
   id="optID"
 />
-`;
-
-exports[`with two simple nested elements using chaining 1`] = `
-<div
-  className="myBlock myBlock_blockMod_value"
->
-  <div
-    className="myBlock__MyElem myBlock__MyElem_elemMod_value"
-  >
-    <div
-      className="myBlock__MyElem2 myBlock__MyElem2_elem2Mod_value"
-    />
-  </div>
-</div>
 `;
 
 exports[`without anything, but with external className  (options as an empty object) 1`] = `

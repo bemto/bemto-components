@@ -7,6 +7,7 @@
 - Added a way to redefine the root tag.
 - Breaking change: changed the way arguments are passed to modifier functions (just one argument, without element's own props).
 - Moved from kizu/bemto-components to bemto/bemto-components.
+- Removed `.elem()` and `.addElem()` generators: they were not working properly.
 
 ### v1.7.0 (2018-01-31)
 
