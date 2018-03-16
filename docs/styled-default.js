@@ -102,15 +102,6 @@ if (!global.hasGlobalStyles) {
       overflow: hidden;
       resize: horizontal;
 
-      @media (max-width: 800px) {
-        flex-direction: column-reverse;
-      }
-
-      & > div {
-        flex-grow: 1;
-        flex-basis: 50%;
-      }
-
       /* Result */
       & > div:first-child {
         display: flex;
@@ -138,6 +129,17 @@ if (!global.hasGlobalStyles) {
       & > div:last-child {
         max-height: 50vh;
         overflow: auto;
+      }
+
+      & > div:not(.ololo) {
+        flex-grow: 1;
+        flex-basis: 50%;
+      }
+
+      @media (max-width: 800px) {
+        &:not(.azaza) {
+          flex-direction: column-reverse;
+        }
       }
     }
   `;

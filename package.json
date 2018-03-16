@@ -31,6 +31,7 @@
   "devDependencies": {
     "bemto-button": "^0.4.0",
     "bemto-overflower": "^0.3.0",
+    "bemto-input": "^0.1.0",
     "jest": "^22.4.2",
     "react-docgen-annotation-resolver": "^1.0.0",
     "react-dom": "^16.1.1",
