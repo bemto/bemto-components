@@ -749,6 +749,22 @@ test('block with a Helper with function tag name, overridden at call', () => {
   );
 });
 
+test('block with a component for the element tag wrapper', () => {
+  testSnapshot(
+    bemto('span.myBlock', {
+      content: [
+        {
+          elem: 'Content',
+          tag: bemto('a.lol'),
+          children: true
+        }
+      ]
+    }),
+    {},
+    'children text'
+  );
+});
+
 test('block with optional before & after inside a wrapper which should render just before', () => {
   testSnapshot(
     bemto('.myBlock', {

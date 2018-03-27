@@ -186,6 +186,18 @@ exports[`block with a complex elements structure 1`] = `
 </div>
 `;
 
+exports[`block with a component for the element tag wrapper 1`] = `
+<span
+  className="myBlock"
+>
+  <a
+    className="lol myBlock__Content"
+  >
+    children text
+  </a>
+</span>
+`;
+
 exports[`block with a more complex list system inside 1`] = `
 <div
   className="myBlock"

@@ -1,5 +1,9 @@
 ## Bemto-components changelog
 
+### v2.0.1 (2018-03-27)
+
+- Fixed component passed as a tag for an element (partially?).
+
 ### v2.0.0 (2018-03-05)
 
 - Added a way to handle state of an element and to adapt props&modifiers based on state.
