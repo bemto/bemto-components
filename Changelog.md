@@ -1,5 +1,9 @@
 ## Bemto-components changelog
 
+### v2.0.2 (2018-03-28)
+
+- Fixed component passed as a tag for an element (less partially lol?).
+
 ### v2.0.1 (2018-03-27)
 
 - Fixed component passed as a tag for an element (partially?).
