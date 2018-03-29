@@ -140,6 +140,32 @@ And, of course, you can pass not just some strings, but other components as well
       </Block>
     </div>
 
+Sometimes you could want to use the content passed to an element as its attribute and not as its actual content. In that case you can use a trick of using an empty array for its value:
+
+    const Block = bemto('.block', {
+      content: [
+        {
+          elem: 'content',
+          children: true
+        },
+        {
+          elem: 'helper',
+          props: {
+            src: p => p.__helper
+          },
+          content: []
+        }
+      ]
+    });
+
+    <div>
+      <Block
+        __helper='https://placebear.com/50/30'
+      >
+        Bear!
+      </Block>
+    </div>
+
 - - -
 
 Those are almost all features available for elements, but we have a lot of plans to expand on this idea. And, I need to mention this: as well as with the modifiers you'll know about below, all of this makes much more sense when used with styled-components. You'll see.

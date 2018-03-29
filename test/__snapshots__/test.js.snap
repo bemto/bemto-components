@@ -526,6 +526,20 @@ exports[`block with passing content to an element through props using an object 
 </div>
 `;
 
+exports[`handling content of an element as a component 1`] = `
+<div>
+  <em
+    className="foo __Helper"
+    title="Should go to title"
+  />
+  <div
+    className="__Content"
+  >
+    some content
+  </div>
+</div>
+`;
+
 exports[`merging props for a component element 1`] = `
 <div>
   <div

@@ -1951,3 +1951,26 @@ test('merging props for a component element', () => {
     'some content'
   );
 });
+
+test('handling content of an element as a component', () => {
+  testSnapshot(
+    bemto({
+      content: [
+        {
+          elem: 'Helper',
+          tag: bemto('em.foo'),
+          props: {
+            title: p => p.__Helper
+          },
+          content: []
+        },
+        {
+          elem: 'Content',
+          children: true
+        }
+      ]
+    }),
+    { __Helper: 'Should go to title' },
+    'some content'
+  );
+});

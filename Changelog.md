@@ -3,6 +3,7 @@
 ### v2.0.3 (2018-03-29)
 
 - Fixed merging of element props.
+- Fixed passing of empty arrays as children, as it caused problems with empty tags like `img`.
 
 ### v2.0.2 (2018-03-28)
 

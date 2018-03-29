@@ -89,6 +89,8 @@ module.exports = {
 
   template: './docs/styleguidist-template.html',
 
+  serverPort: 6061,
+
   resolver: (ast, recast) => {
     const annotatedComponents = annotationResolver(ast, recast);
     const defaultComponents = defaultResolver(ast, recast);
