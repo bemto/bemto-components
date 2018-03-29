@@ -526,6 +526,34 @@ exports[`block with passing content to an element through props using an object 
 </div>
 `;
 
+exports[`merging props for a component element 1`] = `
+<div>
+  <div
+    bar="overridden"
+    baz="new prop"
+    className="__Content"
+    compProp="should stay yay?"
+    compProp2="final compProp2 value"
+    foo="should stay"
+  >
+    some content
+  </div>
+</div>
+`;
+
+exports[`merging props for element 1`] = `
+<div>
+  <div
+    bar="overridden"
+    baz="new prop"
+    className="__Content"
+    foo="should stay"
+  >
+    some content
+  </div>
+</div>
+`;
+
 exports[`should NOT become a button as a non-neutral type given 1`] = `
 <input
   className="myButton"

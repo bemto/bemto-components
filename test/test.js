@@ -1915,3 +1915,39 @@ test('blacklist for props', () => {
     { foo: 'bar', title: 'ok ok ok' }
   );
 });
+
+test('merging props for element', () => {
+  testSnapshot(
+    bemto({
+      content: {
+        elem: 'Content',
+        props: {
+          foo: 'should stay',
+          bar: 'should not stay'
+        },
+        children: true
+      }
+    }),
+    { __Content: { props: { bar: 'overridden', baz: 'new prop' } } },
+    'some content'
+  );
+});
+
+test('merging props for a component element', () => {
+  testSnapshot(
+    bemto({
+      content: {
+        elem: 'Content',
+        tag: bemto({ props: { compProp: 'should stay yay?', compProp2: 'should not stay' } }),
+        props: {
+          foo: 'should stay',
+          bar: 'should not stay',
+          compProp2: 'new compProp2 value, would not stay'
+        },
+        children: true
+      }
+    }),
+    { __Content: { props: { bar: 'overridden', baz: 'new prop', compProp2: 'final compProp2 value' } } },
+    'some content'
+  );
+});

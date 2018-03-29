@@ -1,5 +1,9 @@
 ## Bemto-components changelog
 
+### v2.0.3 (2018-03-29)
+
+- Fixed merging of element props.
+
 ### v2.0.2 (2018-03-28)
 
 - Fixed component passed as a tag for an element (less partially lol?).
