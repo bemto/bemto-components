@@ -1906,3 +1906,12 @@ test('block with custom state constructor (faulty)', () => {
     'hello'
   );
 });
+
+test('blacklist for props', () => {
+  testSnapshot(
+    bemto({
+      acceptProps: { except: 'foo' }
+    }),
+    { foo: 'bar', title: 'ok ok ok' }
+  );
+});

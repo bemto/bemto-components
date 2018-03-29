@@ -1,5 +1,11 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
+exports[`blacklist for props 1`] = `
+<div
+  title="ok ok ok"
+/>
+`;
+
 exports[`block that passes all its props to one of its children 1`] = `
 <div
   className="myBlock myBlock_mod"

@@ -41,7 +41,7 @@ Possible values for `acceptProps`:
 - `true` — to accept every prop (default for Block);
 - `[]` — do not accept any props (default for Elements);
 - `['foo', 'bar']` — accept only `foo` and `bar` props if present.
-- `{}` — object that could have a key `except` that could contain props that should **not** be accepted. When used on Element, would be merged with the props that are accepted by BLock.
+- `{}` — object that could have a key `except` that could contain props that should **not** be accepted. When used on Element, would be merged with the props that are accepted by Block. You can also use the `acceptProps: { except: […] }` on Block whenever you want to blackList any properties from being rendered in the end.
 
 **Note:** right now the `className` is always accepted _only_ by Block, as well as any bemto props (those starting from `_`). Also, right now exception would always override inclusion, so if Block accepts some prop, it won't be possible to accept it on Elements. This probably woulc change in the future.
 
