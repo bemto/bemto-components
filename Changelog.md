@@ -1,5 +1,10 @@
 ## Bemto-components changelog
 
+### v2.1.0 (2018-03-30)
+
+- Added `calculatedProps` to allow props passed inside an object to an element to be calculated when given as functions.
+- Fixed some linking issues by deep clone.
+
 ### v2.0.3 (2018-03-29)
 
 - Fixed merging of element props.
