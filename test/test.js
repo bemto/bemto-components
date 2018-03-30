@@ -1974,3 +1974,82 @@ test('handling content of an element as a component', () => {
     'some content'
   );
 });
+
+test('content as function', () => {
+  testSnapshot(
+    bemto('.myBlock', {
+      content: [
+        {
+          elem: 'Helper',
+          content: () => 'lol'
+        },
+        {
+          children: true
+        }
+      ]
+    }),
+    {},
+    'hello there'
+  );
+});
+
+test('content as function based on prop', () => {
+  testSnapshot(
+    bemto('.myBlock', {
+      content: [
+        {
+          elem: 'Helper',
+          content: props => props._mod ? 'yep' : 'nope'
+        },
+        {
+          children: true
+        }
+      ]
+    }),
+    {
+      _mod: true
+    },
+    'hello there'
+  );
+});
+
+test('content as function based on prop, faulty', () => {
+  testSnapshot(
+    bemto('.myBlock', {
+      content: [
+        {
+          elem: 'Helper',
+          content: props => props._mod ? 'yep' : 'nope'
+        },
+        {
+          children: true
+        }
+      ]
+    }),
+    {
+    },
+    'hello there'
+  );
+});
+
+test('content as function based on prop, from block prop', () => {
+  testSnapshot(
+    bemto('.myBlock', {
+      content: [
+        {
+          elem: 'Helper'
+        },
+        {
+          children: true
+        }
+      ]
+    }),
+    {
+      _mod: true,
+      __Helper: {
+        content: props => props._mod ? 'yep' : 'nope'
+      }
+    },
+    'hello there'
+  );
+});

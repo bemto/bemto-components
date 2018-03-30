@@ -1,5 +1,9 @@
 ## Bemto-components changelog
 
+### v2.2.0 (2018-03-30)
+
+- Added a way to use functions as `content` for elements.
+
 ### v2.1.0 (2018-03-30)
 
 - Added `calculatedProps` to allow props passed inside an object to an element to be calculated when given as functions.

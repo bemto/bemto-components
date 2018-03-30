@@ -526,6 +526,58 @@ exports[`block with passing content to an element through props using an object 
 </div>
 `;
 
+exports[`content as function 1`] = `
+<div
+  className="myBlock"
+>
+  <div
+    className="myBlock__Helper"
+  >
+    lol
+  </div>
+  hello there
+</div>
+`;
+
+exports[`content as function based on prop 1`] = `
+<div
+  className="myBlock myBlock_mod"
+>
+  <div
+    className="myBlock__Helper"
+  >
+    yep
+  </div>
+  hello there
+</div>
+`;
+
+exports[`content as function based on prop, faulty 1`] = `
+<div
+  className="myBlock"
+>
+  <div
+    className="myBlock__Helper"
+  >
+    nope
+  </div>
+  hello there
+</div>
+`;
+
+exports[`content as function based on prop, from block prop 1`] = `
+<div
+  className="myBlock myBlock_mod"
+>
+  <div
+    className="myBlock__Helper"
+  >
+    yep
+  </div>
+  hello there
+</div>
+`;
+
 exports[`handling content of an element as a component 1`] = `
 <div>
   <em
