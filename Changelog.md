@@ -1,5 +1,9 @@
 ## Bemto-components changelog
 
+### v2.3.0 (2018-04-03)
+
+- Added two basic lifecycle methods setters: componentDidMount & componentWillUnmount, alongside a way to autoassign ref to an element (no docs & tests yet).
+
 ### v2.2.0 (2018-03-30)
 
 - Added a way to use functions as `content` for elements.
