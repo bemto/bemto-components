@@ -2053,3 +2053,22 @@ test('content as function based on prop, from block prop', () => {
     'hello there'
   );
 });
+
+test.only('passing a bemto block to an element in props', () => {
+  testSnapshot(
+    bemto('.myBlock', {
+      content: [
+        {
+          elem: 'Helper'
+        },
+        {
+          children: true
+        }
+      ]
+    }),
+    {
+      __Helper: bemto('.new')
+    },
+    'hello there'
+  );
+});

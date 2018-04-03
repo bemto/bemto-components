@@ -620,6 +620,21 @@ exports[`merging props for element 1`] = `
 </div>
 `;
 
+exports[`passing a bemto block to an element in props 1`] = `
+<div
+  className="myBlock"
+>
+  <div
+    className="myBlock__Helper"
+  >
+    <div
+      className="new"
+    />
+  </div>
+  hello there
+</div>
+`;
+
 exports[`should NOT become a button as a non-neutral type given 1`] = `
 <input
   className="myButton"

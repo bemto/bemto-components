@@ -1,5 +1,9 @@
 ## Bemto-components changelog
 
+### v2.3.1 (in development)
+
+- Fixed usage with a non-created component inside elem prop.
+
 ### v2.3.0 (2018-04-03)
 
 - Added two basic lifecycle methods setters: componentDidMount & componentWillUnmount, alongside a way to autoassign ref to an element (no docs & tests yet).
