@@ -3,6 +3,7 @@
 ### v2.3.1 (in development)
 
 - Fixed usage with a non-created component inside elem prop.
+- Fixed undefined context issue.
 
 ### v2.3.0 (2018-04-03)
 
