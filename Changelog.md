@@ -1,6 +1,6 @@
 ## Bemto-components changelog
 
-### v2.3.1 (in development)
+### v2.3.1 (2018-04-05)
 
 - Fixed usage with a non-created component inside elem prop.
 - Fixed undefined context issue.
