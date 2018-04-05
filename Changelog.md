@@ -1,5 +1,9 @@
 ## Bemto-components changelog
 
+### v2.3.2 (2018-04-05)
+
+- Fixed incorrect variable definition.
+
 ### v2.3.1 (2018-04-05)
 
 - Fixed usage with a non-created component inside elem prop.
