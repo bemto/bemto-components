@@ -1,6 +1,6 @@
 {
   "name": "bemto-components",
-  "version": "2.3.3",
+  "version": "2.3.4",
   "description": "Smart components for using parts of BEM methodology with React",
   "main": "lib/index.js",
   "scripts": {
@@ -27,7 +27,7 @@
   "homepage": "https://github.com/bemto/bemto-components#readme",
   "dependencies": {
     "lodash.clonedeep": "^4.5.0",
-    "react": "16.2.0"
+    "react": "^16.3.1"
   },
   "devDependencies": {
     "bemto-button": "^0.5.0",
@@ -35,9 +35,9 @@
     "bemto-input": "^0.2.0",
     "jest": "21.2.1",
     "react-docgen-annotation-resolver": "^1.0.0",
-    "react-dom": "^16.2.0",
+    "react-dom": "^16.3.1",
     "react-styleguidist": "6.0.33",
-    "react-test-renderer": "16.2.0",
+    "react-test-renderer": "^16.3.1",
     "styled-components": "^3.1.6",
     "webpack": "^3.8.1"
   }
