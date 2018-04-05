@@ -2054,7 +2054,7 @@ test('content as function based on prop, from block prop', () => {
   );
 });
 
-test.only('passing a bemto block to an element in props', () => {
+test('passing a bemto block to an element in props', () => {
   testSnapshot(
     bemto('.myBlock', {
       content: [
