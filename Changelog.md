@@ -1,5 +1,9 @@
 ## Bemto-components changelog
 
+### v2.3.3 (2018-04-05)
+
+- Fixed another obscure bug (yeah, need more tests and refactor _everything_).
+
 ### v2.3.2 (2018-04-05)
 
 - Fixed incorrect variable definition.
