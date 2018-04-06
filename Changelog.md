@@ -1,5 +1,9 @@
 ## Bemto-components changelog
 
+### v2.3.6 (in development)
+
+- Fixed a case when there is no item passed to unfold.
+
 ### v2.3.5 (2018-04-06)
 
 - Fixed the state passed to `optional` option.
