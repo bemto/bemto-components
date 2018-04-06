@@ -620,6 +620,19 @@ exports[`merging props for element 1`] = `
 </div>
 `;
 
+exports[`optionality of an element based on state 1`] = `
+<div
+  className="myBlock"
+>
+  <div
+    className="myBlock__Helper"
+  >
+    helper
+  </div>
+  hello there
+</div>
+`;
+
 exports[`passing a bemto block to an element in props 1`] = `
 <div
   className="myBlock"

@@ -1,5 +1,9 @@
 ## Bemto-components changelog
 
+### v2.3.5 (2018-04-06)
+
+- Fixed the state passed to `optional` option.
+
 ### v2.3.1–v2.3.4 (2018-04-05)
 
 - Unfixed react (though did it long time ago?).

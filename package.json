@@ -1,6 +1,6 @@
 {
   "name": "bemto-components",
-  "version": "2.3.4",
+  "version": "2.3.5",
   "description": "Smart components for using parts of BEM methodology with React",
   "main": "lib/index.js",
   "scripts": {

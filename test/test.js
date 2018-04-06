@@ -2072,3 +2072,25 @@ test('passing a bemto block to an element in props', () => {
     'hello there'
   );
 });
+
+
+test('optionality of an element based on state', () => {
+  testSnapshot(
+    bemto('.myBlock', {
+      initialState: { foo: true },
+      content: [
+        {
+          optional: (props, state) => !state.foo,
+          elem: 'Helper',
+          content: 'helper'
+        },
+        {
+          children: true
+        }
+      ]
+    }),
+    {
+    },
+    'hello there'
+  );
+});
