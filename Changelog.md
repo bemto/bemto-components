@@ -1,8 +1,9 @@
 ## Bemto-components changelog
 
-### v2.3.6 (in development)
+### v2.3.6 (2018-04-18)
 
 - Fixed a case when there is no item passed to unfold.
+- Up input dep.
 
 ### v2.3.5 (2018-04-06)
 
