@@ -1,5 +1,9 @@
 ## Bemto-components changelog
 
+### v2.4.1 (in development)
+
+- Fixed a case when the item is non-extensible.
+
 ### v2.4.0 (2018-05-14)
 
 - Added `getDerivedStateFromProps` lifecycle method.
