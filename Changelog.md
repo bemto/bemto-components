@@ -1,5 +1,9 @@
 ## Bemto-components changelog
 
+### v2.4.0 (2018-05-14)
+
+- Added `getDerivedStateFromProps` lifecycle method.
+
 ### v2.3.6 (2018-04-18)
 
 - Fixed a case when there is no item passed to unfold.
