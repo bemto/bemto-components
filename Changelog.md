@@ -1,8 +1,9 @@
 ## Bemto-components changelog
 
-### v2.4.1 (in development)
+### v2.4.1 (2018-06-12)
 
 - Fixed a case when the item is non-extensible.
+- Fixed not handling empty string or zero as potential prop values for elements.
 
 ### v2.4.0 (2018-05-14)
 
