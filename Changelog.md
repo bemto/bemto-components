@@ -1,5 +1,9 @@
 ## Bemto-components changelog
 
+### v2.5.1 (2018-06-13)
+
+- Quickfix to prevent excessive multiplying of nested bemto classNames.
+
 ### v2.5.0 (2018-06-13)
 
 - Added `shouldComponentUpdate`, `getSnapshotBeforeUpdate` and `componentDidUpdate` lifecycle methods.
