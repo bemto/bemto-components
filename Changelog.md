@@ -1,5 +1,9 @@
 ## Bemto-components changelog
 
+### v2.5.0 (2018-06-13)
+
+- Added `shouldComponentUpdate`, `getSnapshotBeforeUpdate` and `componentDidUpdate` lifecycle methods.
+
 ### v2.4.1 (2018-06-12)
 
 - Fixed a case when the item is non-extensible.
